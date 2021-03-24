@@ -6,7 +6,7 @@
   <link href="https://minsukin.github.io/atom.xml" rel="self"/>
   
   <link href="https://minsukin.github.io/"/>
-  <updated>2021-03-24T23:13:05.589Z</updated>
+  <updated>2021-03-24T23:41:11.739Z</updated>
   <id>https://minsukin.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://minsukin.github.io/2021/03/24/test/"/>
     <id>https://minsukin.github.io/2021/03/24/test/</id>
     <published>2021-03-24T23:08:12.000Z</published>
-    <updated>2021-03-24T23:13:05.589Z</updated>
+    <updated>2021-03-24T23:41:11.739Z</updated>
     
     <content type="html"><![CDATA[<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><p>안녕하세요</p>]]></content>
     
@@ -30,6 +30,8 @@
 </summary>
     
     
+    
+    <category term="Blog" scheme="https://minsukin.github.io/categories/Blog/"/>
     
     
     <category term="test" scheme="https://minsukin.github.io/tags/test/"/>

@@ -38,6 +38,9 @@
     <url>/2021/03/24/test/</url>
     <content><![CDATA[<h3 id="test"><a href="#test" class="headerlink" title="test"></a>test</h3><p>안녕하세요</p>
 ]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
       <tags>
         <tag>test</tag>
       </tags>
