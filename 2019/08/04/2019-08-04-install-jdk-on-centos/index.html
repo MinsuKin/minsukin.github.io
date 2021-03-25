@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"minsukin.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="개요  CentOS 환경에 Java를 설치하는 방법을 정리한다.   OpenJDKOpenJDK 버전2019년 07월 29일 기준으로 최신 버전인 build 12+32를 이용하여 설명한다. OpenJDK 다운로드http:&#x2F;&#x2F;jdk.java.net 위 사이트에서 JDK 최신 버전의 링크를 복사한다. 본 문서 작성일 기준으로 다음과 같았다.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CentOS에 JDK 설치하기">
+<meta property="og:url" content="https://minsukin.github.io/2019/08/04/2019-08-04-install-jdk-on-centos/index.html">
+<meta property="og:site_name" content="minsu&#39;s blog">
+<meta property="og:description" content="개요  CentOS 환경에 Java를 설치하는 방법을 정리한다.   OpenJDKOpenJDK 버전2019년 07월 29일 기준으로 최신 버전인 build 12+32를 이용하여 설명한다. OpenJDK 다운로드http:&#x2F;&#x2F;jdk.java.net 위 사이트에서 JDK 최신 버전의 링크를 복사한다. 본 문서 작성일 기준으로 다음과 같았다.">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2019-08-04T04:33:35.000Z">
+<meta property="article:modified_time" content="2021-03-25T14:34:54.515Z">
+<meta property="article:author" content="Minsu Kim">
+<meta property="article:tag" content="CentOS">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JDK">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://minsukin.github.io/2019/08/04/2019-08-04-install-jdk-on-centos/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'ko'
+  };
+</script>
+<title>CentOS에 JDK 설치하기 | minsu's blog</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="minsu's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">minsu's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Develop your dream</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text">개요</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenJDK"><span class="nav-number">2.</span> <span class="nav-text">OpenJDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenJDK-%EB%B2%84%EC%A0%84"><span class="nav-number">2.1.</span> <span class="nav-text">OpenJDK 버전</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenJDK-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"><span class="nav-number">2.2.</span> <span class="nav-text">OpenJDK 다운로드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenJDK-%EC%84%A4%EC%B9%98"><span class="nav-number">2.3.</span> <span class="nav-text">OpenJDK 설치</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle-JDK"><span class="nav-number">3.</span> <span class="nav-text">Oracle JDK</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle-JDK-%EB%B2%84%EC%A0%84"><span class="nav-number">3.1.</span> <span class="nav-text">Oracle JDK 버전</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle-JDK-%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C"><span class="nav-number">3.2.</span> <span class="nav-text">Oracle JDK 다운로드</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Oracle-JDK-%EC%84%A4%EC%B9%98"><span class="nav-number">3.3.</span> <span class="nav-text">Oracle JDK 설치</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Minsu Kim"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Minsu Kim</p>
+  <div class="site-description" itemprop="description">효율 중시 백엔드 개발자</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/minsukin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;minsukin" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:minus9521@gmail.com" title="E-Mail → mailto:minus9521@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/minsu3o1" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;minsu3o1" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/04/2019-08-04-install-jdk-on-centos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Minsu Kim">
+      <meta itemprop="description" content="효율 중시 백엔드 개발자">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="minsu's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CentOS에 JDK 설치하기
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2019-08-04 13:33:35" itemprop="dateCreated datePublished" datetime="2019-08-04T13:33:35+09:00">2019-08-04</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Updated at: 2021-03-25 23:34:54" itemprop="dateModified" datetime="2021-03-25T23:34:54+09:00">2021-03-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">시스템 구축</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/08/04/2019-08-04-install-jdk-on-centos/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/04/2019-08-04-install-jdk-on-centos/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
+
+<p>CentOS 환경에 Java를 설치하는 방법을 정리한다.</p>
+<span id="more"></span>
+
+<h2 id="OpenJDK"><a href="#OpenJDK" class="headerlink" title="OpenJDK"></a>OpenJDK</h2><h3 id="OpenJDK-버전"><a href="#OpenJDK-버전" class="headerlink" title="OpenJDK 버전"></a>OpenJDK 버전</h3><p>2019년 07월 29일 기준으로 최신 버전인 build 12+32를 이용하여 설명한다.</p>
+<h3 id="OpenJDK-다운로드"><a href="#OpenJDK-다운로드" class="headerlink" title="OpenJDK 다운로드"></a>OpenJDK 다운로드</h3><p><a target="_blank" rel="noopener" href="http://jdk.java.net/">http://jdk.java.net</a></p>
+<p>위 사이트에서 JDK 최신 버전의 링크를 복사한다.</p>
+<p>본 문서 작성일 기준으로 다음과 같았다.</p>
+<p><a target="_blank" rel="noopener" href="https://download.java.net/openjdk/jdk12/ri/openjdk-12+32_linux-x64_bin.tar.gz">https://download.java.net/openjdk/jdk12/ri/openjdk-12+32_linux-x64_bin.tar.gz</a></p>
+<p>다음 명령어로 해당 JDK 압축 파일을 다운로드한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.java.net/openjdk/jdk12/ri/openjdk-12+32_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
+
+<h3 id="OpenJDK-설치"><a href="#OpenJDK-설치" class="headerlink" title="OpenJDK 설치"></a>OpenJDK 설치</h3><p>다음 명령어로 다운로드 한 압축 파일의 압축을 해제한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf openjdk-12+32_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>다음 명령어로 JDK 디렉토리를 이동하고 심볼릭 링크를 생성한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv jdk-12 /usr/<span class="built_in">local</span>/</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span></span><br><span class="line">ln -sf jdk-12 java</span><br></pre></td></tr></table></figure>
+
+<p>사용 중인 쉘의 rc 파일의 가장 아래에 다음 구문을 추가한다. (.bashrc, .zshrc 등)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/java/bin</span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure>
+
+<p>다음 명령어로 사용 중인 쉘의 rc 파일을 적용한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>다음 명령어로 Java와 컴파일러를 정상적으로 사용할 수 있는지 확인한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java --version</span><br><span class="line">javac --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="Oracle-JDK"><a href="#Oracle-JDK" class="headerlink" title="Oracle JDK"></a>Oracle JDK</h2><p>2018년 7월부터 Oracle JDK의 Java SE Subscription 라이센스 정책이 시행됨에 따라 상업용으로 이용하려면 라이센스 구독을 해야 한다.</p>
+<p>다만 Oracle JDK 1.8.202 버전 이하는 여전히 프로그램의 동작을 위한 목적에 한하여 무료로 사용 가능한 Binary Code License(BCL) 정책을 따른다.</p>
+<h3 id="Oracle-JDK-버전"><a href="#Oracle-JDK-버전" class="headerlink" title="Oracle JDK 버전"></a>Oracle JDK 버전</h3><p>개인용으로 사용할 것인지 상업용으로 사용할 것인지 등에 따라서 원하는 버전이 달라질 수 있다.</p>
+<p>필자는 개인적으로 사용할 예정이므로 2019년 08월 04일 기준으로 최신 버전인 12.0.2를 기준으로 설명한다.</p>
+<h3 id="Oracle-JDK-다운로드"><a href="#Oracle-JDK-다운로드" class="headerlink" title="Oracle JDK 다운로드"></a>Oracle JDK 다운로드</h3><p><a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">오라클 Java SE 다운로드 페이지</a>에 접속하여 원하는 버전을 다운로드한다.</p>
+<p>오라클 웹 페이지에서는 접속하는 클라이언트가 쿠키 정책에 동의해야만 이후 작업을 처리해 주기 때문에 wget으로 간단하게 다운로드 하기 어렵다.</p>
+<p>그래서 그냥 로컬 컴퓨터로 다운로드 하고 설치하려는 서버에 직접 옮기는 게 편하다.</p>
+<h3 id="Oracle-JDK-설치"><a href="#Oracle-JDK-설치" class="headerlink" title="Oracle JDK 설치"></a>Oracle JDK 설치</h3><p>다음 명령어로 다운로드 한 압축 파일의 압축을 해제한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf jdk-12.0.2_linux-x64_bin.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>다음 명령어로 JDK 디렉토리를 이동하고 심볼릭 링크를 생성한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mv jdk-12.0.2 /usr/<span class="built_in">local</span>/</span><br><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span></span><br><span class="line">ln -sf jdk-12.0.2 java</span><br></pre></td></tr></table></figure>
+
+<p>사용 중인 쉘의 rc 파일의 가장 아래에 다음 구문을 추가한다. (.bashrc, .zshrc 등)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/java/bin</span><br><span class="line"><span class="built_in">export</span> PATH</span><br></pre></td></tr></table></figure>
+
+<p>다음 명령어로 사용 중인 쉘의 rc 파일을 적용한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>다음 명령어로 Java와 컴파일러를 정상적으로 사용할 수 있는지 확인한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java --version</span><br><span class="line">javac --version</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CentOS/" rel="tag"># CentOS</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/JDK/" rel="tag"># JDK</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/08/03/2019-08-03-install-docker-on-centos/" rel="prev" title="CentOS에 Docker 설치하기">
+                  <i class="fa fa-chevron-left"></i> CentOS에 Docker 설치하기
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/05/2019-08-05-run-kafka-with-docker/" rel="next" title="Docker를 이용하여 Zookeeper와 Kafka 실행하기">
+                  Docker를 이용하여 Zookeeper와 Kafka 실행하기 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Minsu Kim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minsu.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://minsukin.github.io/2019/08/04/2019-08-04-install-jdk-on-centos/";
+    this.page.identifier = "2019/08/04/2019-08-04-install-jdk-on-centos/";
+    this.page.title = "CentOS에 JDK 설치하기";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://minsu.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

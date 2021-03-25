@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"minsukin.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+<meta name="description" content="개요현실의 문제를 프로그래밍으로 다루려고 고민하다 보면 조건에 따른 분기를 어떻게 처리할 것인지에 대해 생각하게 된다.이 때 단순하고 전통적인 방식으로 조건을 확인하고 맞으면 이거, 아니면 저거 식의 if-else문을 사용해도 되지만더 나은 프로그래밍 방식에 대한 가치관을 세우고 객체지향, 함수형 등의 다양한 개념을 접하다 보면사람에 따라, 상황에 따라 열">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python Enum 클래스">
+<meta property="og:url" content="https://minsukin.github.io/2019/08/10/2019-08-10-python-enum/index.html">
+<meta property="og:site_name" content="minsu&#39;s blog">
+<meta property="og:description" content="개요현실의 문제를 프로그래밍으로 다루려고 고민하다 보면 조건에 따른 분기를 어떻게 처리할 것인지에 대해 생각하게 된다.이 때 단순하고 전통적인 방식으로 조건을 확인하고 맞으면 이거, 아니면 저거 식의 if-else문을 사용해도 되지만더 나은 프로그래밍 방식에 대한 가치관을 세우고 객체지향, 함수형 등의 다양한 개념을 접하다 보면사람에 따라, 상황에 따라 열">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2019-08-10T11:35:38.000Z">
+<meta property="article:modified_time" content="2021-03-25T14:34:54.559Z">
+<meta property="article:author" content="Minsu Kim">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Enum">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://minsukin.github.io/2019/08/10/2019-08-10-python-enum/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'ko'
+  };
+</script>
+<title>Python Enum 클래스 | minsu's blog</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="minsu's blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">minsu's blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Develop your dream</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>홈</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>태그</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>카테고리</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>아카이브</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>검색
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          목차
+        </li>
+        <li class="sidebar-nav-overview">
+          흝어보기
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%EA%B0%9C%EC%9A%94"><span class="nav-number">1.</span> <span class="nav-text">개요</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%82%AC%EC%9A%A9%EB%B2%95"><span class="nav-number">2.</span> <span class="nav-text">사용법</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EA%B8%B0%EB%B3%B8"><span class="nav-number">2.1.</span> <span class="nav-text">기본</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unique"><span class="nav-number">2.2.</span> <span class="nav-text">Unique</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Auto"><span class="nav-number">2.3.</span> <span class="nav-text">Auto</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EC%B0%B8%EA%B3%A0%EC%9E%90%EB%A3%8C"><span class="nav-number">3.</span> <span class="nav-text">참고자료</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Minsu Kim"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Minsu Kim</p>
+  <div class="site-description" itemprop="description">효율 중시 백엔드 개발자</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">포스트</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">카테고리</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">태그</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/minsukin" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;minsukin" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:minus9521@gmail.com" title="E-Mail → mailto:minus9521@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/minsu3o1" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;minsu3o1" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="ko">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/10/2019-08-10-python-enum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Minsu Kim">
+      <meta itemprop="description" content="효율 중시 백엔드 개발자">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="minsu's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python Enum 클래스
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">작성일</span>
+
+      <time title="Post created: 2019-08-10 20:35:38" itemprop="dateCreated datePublished" datetime="2019-08-10T20:35:38+09:00">2019-08-10</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Updated at: 2021-03-25 23:34:54" itemprop="dateModified" datetime="2021-03-25T23:34:54+09:00">2021-03-25</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" itemprop="url" rel="index"><span itemprop="name">프로그래밍</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2019/08/10/2019-08-10-python-enum/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/10/2019-08-10-python-enum/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><p>현실의 문제를 프로그래밍으로 다루려고 고민하다 보면 조건에 따른 분기를 어떻게 처리할 것인지에 대해 생각하게 된다.<br>이 때 단순하고 전통적인 방식으로 조건을 확인하고 맞으면 이거, 아니면 저거 식의 if-else문을 사용해도 되지만<br>더 나은 프로그래밍 방식에 대한 가치관을 세우고 객체지향, 함수형 등의 다양한 개념을 접하다 보면<br>사람에 따라, 상황에 따라 열거형 클래스 등을 이용해서 처리하기도 한다.</p>
+<p>Python에서는 3.4 버전부터 열거형 클래스인 Enum을 기본으로 탑재하였다.<br>이 문서에서는 이것을 사용하는 방법을 정리한다.</p>
+<span id="more"></span>
+
+<h2 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h2><h3 id="기본"><a href="#기본" class="headerlink" title="기본"></a>기본</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> enum</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Color</span>(<span class="params">enum.Enum</span>):</span></span><br><span class="line">    RED = <span class="number">0</span></span><br><span class="line">    GREEN = <span class="number">1</span></span><br><span class="line">    BLUE = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p><code>enum.Enum</code> 클래스를 상속받는 <code>Color</code> 클래스는 이제 열거형 상수로 이용된다.<br>이 예제에서는 정수를 이용하나 정수 뿐만 아니라 모든 자료형을 사용할 수 있다.</p>
+<p>기본적인 사용에서는 다음과 같은 결과를 가져올 수 있다.<br>각 코드에 대한 반환값은 다음 줄에 주석으로 표기하였다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">print(Color)</span><br><span class="line"><span class="comment"># &lt;enum &#x27;Color&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line">print(Color.RED, Color.BLUE, Color.GREEN)</span><br><span class="line"><span class="comment"># Color.RED Color.BLUE Color.GREEN</span></span><br><span class="line"></span><br><span class="line">print(Color.RED.name)</span><br><span class="line"><span class="comment"># RED</span></span><br><span class="line"></span><br><span class="line">print(Color.RED.value)</span><br><span class="line"><span class="comment"># 0</span></span><br><span class="line"></span><br><span class="line">print(<span class="built_in">repr</span>(Color.RED))</span><br><span class="line"><span class="comment"># &lt;Color.RED: 0&gt;</span></span><br><span class="line"></span><br><span class="line">print(<span class="built_in">type</span>(Color.RED))</span><br><span class="line"><span class="comment"># &lt;enum &#x27;Color&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line">print(Color(<span class="number">0</span>), Color(<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Color.RED Color.BLUE</span></span><br><span class="line"></span><br><span class="line">print(Color[<span class="string">&#x27;RED&#x27;</span>], Color[<span class="string">&#x27;BLUE&#x27;</span>])</span><br><span class="line"><span class="comment"># Color.RED Color.BLUE</span></span><br><span class="line"></span><br><span class="line">print(Color.RED == Color.RED)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">print(Color.RED == <span class="number">0</span>)</span><br><span class="line"><span class="comment"># False</span></span><br><span class="line"><span class="comment">## enum을 정수와 비교하는 것은 항상 False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> Color:</span><br><span class="line">    print(c)</span><br><span class="line"><span class="comment"># Color.RED</span></span><br><span class="line"><span class="comment"># Color.GREEN</span></span><br><span class="line"><span class="comment"># Color.BLUE</span></span><br><span class="line"></span><br><span class="line">print(<span class="built_in">list</span>(Color))</span><br><span class="line"><span class="comment"># [&lt;Color.RED: 0&gt;, &lt;Color.GREEN: 1&gt;, &lt;Color.BLUE: 2&gt;]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Unique"><a href="#Unique" class="headerlink" title="Unique"></a>Unique</h3><p>열거형 데이터의 인덱스에 대한 유일성을 보장해야 하는 경우가 있을 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@enum.unique</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foods</span>(<span class="params">enum.Enum</span>):</span></span><br><span class="line">    SNACK = <span class="number">0</span></span><br><span class="line">    COKE = <span class="number">1</span></span><br><span class="line">    CIDER = <span class="number">1</span></span><br><span class="line">    JUICE = <span class="number">1</span></span><br><span class="line">    PIZZA = <span class="number">2</span></span><br><span class="line">    BURGER = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p><code>enum.unique</code>라는 Decoration을 사용하면 위와 같이 중복된 값을 가지는 속성이 있는 경우 에러를 발생시킨다.</p>
+<h3 id="Auto"><a href="#Auto" class="headerlink" title="Auto"></a>Auto</h3><p>Python 3.6 버전 이상에서는 <code>enum.auto()</code> 함수를 이용하여 자동으로 인덱스를 할당할 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewColor</span>(<span class="params">enum.Enum</span>):</span></span><br><span class="line">    RED = enum.auto()</span><br><span class="line">    GREEN = enum.auto()</span><br><span class="line">    BLUE = enum.auto()</span><br></pre></td></tr></table></figure>
+
+<p>인덱스는 1부터 시작하고 1씩 증가한다.</p>
+<h2 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://pythonkim.tistory.com/90">enum 클래스</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/Enum/" rel="tag"># Enum</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/08/09/2019-08-09-install-mobaxterm-on-windows/" rel="prev" title="Windows에 MobaXterm 설치하기">
+                  <i class="fa fa-chevron-left"></i> Windows에 MobaXterm 설치하기
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/08/10/2019-08-11-install-zsh-on-ubuntu/" rel="next" title="Ubuntu에 Zsh 구성하기">
+                  Ubuntu에 Zsh 구성하기 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Minsu Kim</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://minsu.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://minsukin.github.io/2019/08/10/2019-08-10-python-enum/";
+    this.page.identifier = "2019/08/10/2019-08-10-python-enum/";
+    this.page.title = "Python Enum 클래스";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://minsu.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
