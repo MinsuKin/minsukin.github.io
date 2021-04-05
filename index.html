@@ -201,20 +201,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -263,7 +263,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/09/15/2019-09-15-los-write-up-20-dragon/">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/10/2019-08-11-install-zsh-on-ubuntu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/50944735.jpeg">
@@ -276,7 +276,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/15/2019-09-15-los-write-up-20-dragon/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.20 Dragon</a>
+          <a href="/2019/08/10/2019-08-11-install-zsh-on-ubuntu/" class="post-title-link" itemprop="url">Ubuntu에 Zsh 구성하기</a>
         </h2>
 
         <div class="post-meta-container">
@@ -287,7 +287,7 @@
       </span>
       <span class="post-meta-item-text">작성일</span>
 
-      <time title="Post created: 2019-09-15 20:45:46" itemprop="dateCreated datePublished" datetime="2019-09-15T20:45:46+09:00">2019-09-15</time>
+      <time title="Post created: 2019-08-11 01:35:41" itemprop="dateCreated datePublished" datetime="2019-08-11T01:35:41+09:00">2019-08-11</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -302,7 +302,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
+          <a href="/categories/%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">개발 환경 구축</span></a>
         </span>
     </span>
 
@@ -315,8 +315,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/09/15/2019-09-15-los-write-up-20-dragon/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/15/2019-09-15-los-write-up-20-dragon/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/08/10/2019-08-11-install-zsh-on-ubuntu/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/10/2019-08-11-install-zsh-on-ubuntu/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -330,17 +330,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
+          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
 
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 20번 dragon 문제에 대하여 정리한다.</p>
+<p>개발 일을 하는 사람에게 뗄래야 뗄 수 없는 것이 바로 터미널 소프트웨어이다.<br>이왕 계속 보는 거 좀 이쁘면 기분이 좋지 않을까?</p>
+<p>나와 같은 생각을 했던 많은 개발자들이 탄탄대로를 만들어 놓았다.<br>이 문서에서는 Ubuntu 환경에 Zsh를 설치하고 구성하는 방법을 정리한다.</p>
 <span id="more"></span>
 
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p>주석 처리를 우회할 수 있는지 확인한다.</p>
-<h3 id="소스-코드-분석"><a href="#소스-코드-분석" class="headerlink" title="소스 코드 분석"></a>소스 코드 분석</h3><p>dragon 문제의 php 소스 코드는 다음과 같다.</p>
+<h2 id="Zsh-설치"><a href="#Zsh-설치" class="headerlink" title="Zsh 설치"></a>Zsh 설치</h2><p>다음 명령어를 이용하여 설치할 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zsh</span><br></pre></td></tr></table></figure>
+
+<p>다음 명령어를 이용하여 zsh를 현재 계정의 기본 쉘로 변경할 수 있다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /usr/bin/zsh</span><br></pre></td></tr></table></figure>
+
+<h2 id="oh-my-zsh-구성"><a href="#oh-my-zsh-구성" class="headerlink" title="oh-my-zsh 구성"></a>oh-my-zsh 구성</h2>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/15/2019-09-15-los-write-up-20-dragon/#more" rel="contents">
+              <a class="btn" href="/2019/08/10/2019-08-11-install-zsh-on-ubuntu/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>
@@ -371,7 +376,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/09/14/2019-09-14-los-write-up-19-xavis/">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/10/2019-08-10-python-enum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/50944735.jpeg">
@@ -384,7 +389,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/14/2019-09-14-los-write-up-19-xavis/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.19 Xavis</a>
+          <a href="/2019/08/10/2019-08-10-python-enum/" class="post-title-link" itemprop="url">Python Enum 클래스</a>
         </h2>
 
         <div class="post-meta-container">
@@ -395,7 +400,7 @@
       </span>
       <span class="post-meta-item-text">작성일</span>
 
-      <time title="Post created: 2019-09-14 20:31:35" itemprop="dateCreated datePublished" datetime="2019-09-14T20:31:35+09:00">2019-09-14</time>
+      <time title="Post created: 2019-08-10 20:35:38" itemprop="dateCreated datePublished" datetime="2019-08-10T20:35:38+09:00">2019-08-10</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -410,7 +415,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
+          <a href="/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" itemprop="url" rel="index"><span itemprop="name">프로그래밍</span></a>
         </span>
     </span>
 
@@ -423,8 +428,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/09/14/2019-09-14-los-write-up-19-xavis/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/14/2019-09-14-los-write-up-19-xavis/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/08/10/2019-08-10-python-enum/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/10/2019-08-10-python-enum/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -438,17 +443,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
-
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 19번 xavis 문제에 대하여 정리한다.</p>
+          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><p>현실의 문제를 프로그래밍으로 다루려고 고민하다 보면 조건에 따른 분기를 어떻게 처리할 것인지에 대해 생각하게 된다.<br>이 때 단순하고 전통적인 방식으로 조건을 확인하고 맞으면 이거, 아니면 저거 식의 if-else문을 사용해도 되지만<br>더 나은 프로그래밍 방식에 대한 가치관을 세우고 객체지향, 함수형 등의 다양한 개념을 접하다 보면<br>사람에 따라, 상황에 따라 열거형 클래스 등을 이용해서 처리하기도 한다.</p>
+<p>Python에서는 3.4 버전부터 열거형 클래스인 Enum을 기본으로 탑재하였다.<br>이 문서에서는 이것을 사용하는 방법을 정리한다.</p>
 <span id="more"></span>
 
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p>ASCII 코드 범위에 포함되지 않는 문자를 대상으로 Blind SQL Injection을 하여 <code>pw</code>를 알아낼 수 있는지 확인한다.</p>
-<h3 id="소스-코드-분석"><a href="#소스-코드-분석" class="headerlink" title="소스 코드 분석"></a>소스 코드 분석</h3><p>xavis 문제의 php 소스 코드는 다음과 같다.</p>
+<h2 id="사용법"><a href="#사용법" class="headerlink" title="사용법"></a>사용법</h2><h3 id="기본"><a href="#기본" class="headerlink" title="기본"></a>기본</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> enum</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Color</span>(<span class="params">enum.Enum</span>):</span></span><br><span class="line">    RED = <span class="number">0</span></span><br><span class="line">    GREEN = <span class="number">1</span></span><br><span class="line">    BLUE = <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p><code>enum.Enum</code> 클래스를 상속받는 <code>Color</code> 클래스는 이제 열거형 상수로 이용된다.<br>이 예제에서는 정수를 이용하나 정수 뿐만 아니라 모든 자료형을 사용할 수 있다.</p>
+<p>기본적인 사용에서는 다음과 같은 결과를 가져올 수 있다.<br>각 코드에 대한 반환값은 다음 줄에 주석으로 표기하였다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">print(Color)</span><br><span class="line"><span class="comment"># &lt;enum &#x27;Color&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line">print(Color.RED, Color.BLUE, Color.GREEN)</span><br><span class="line"><span class="comment"># Color.RED Color.BLUE Color.GREEN</span></span><br><span class="line"></span><br><span class="line">print(Color.RED.name)</span><br><span class="line"><span class="comment"># RED</span></span><br><span class="line"></span><br><span class="line">print(Color.RED.value)</span><br><span class="line"><span class="comment"># 0</span></span><br><span class="line"></span><br><span class="line">print(<span class="built_in">repr</span>(Color.RED))</span><br><span class="line"><span class="comment"># &lt;Color.RED: 0&gt;</span></span><br><span class="line"></span><br><span class="line">print(<span class="built_in">type</span>(Color.RED))</span><br><span class="line"><span class="comment"># &lt;enum &#x27;Color&#x27;&gt;</span></span><br><span class="line"></span><br><span class="line">print(Color(<span class="number">0</span>), Color(<span class="number">2</span>))</span><br><span class="line"><span class="comment"># Color.RED Color.BLUE</span></span><br><span class="line"></span><br><span class="line">print(Color[<span class="string">&#x27;RED&#x27;</span>], Color[<span class="string">&#x27;BLUE&#x27;</span>])</span><br><span class="line"><span class="comment"># Color.RED Color.BLUE</span></span><br><span class="line"></span><br><span class="line">print(Color.RED == Color.RED)</span><br><span class="line"><span class="comment"># True</span></span><br><span class="line"></span><br><span class="line">print(Color.RED == <span class="number">0</span>)</span><br><span class="line"><span class="comment"># False</span></span><br><span class="line"><span class="comment">## enum을 정수와 비교하는 것은 항상 False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> Color:</span><br><span class="line">    print(c)</span><br><span class="line"><span class="comment"># Color.RED</span></span><br><span class="line"><span class="comment"># Color.GREEN</span></span><br><span class="line"><span class="comment"># Color.BLUE</span></span><br><span class="line"></span><br><span class="line">print(<span class="built_in">list</span>(Color))</span><br><span class="line"><span class="comment"># [&lt;Color.RED: 0&gt;, &lt;Color.GREEN: 1&gt;, &lt;Color.BLUE: 2&gt;]</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/14/2019-09-14-los-write-up-19-xavis/#more" rel="contents">
+              <a class="btn" href="/2019/08/10/2019-08-10-python-enum/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>
@@ -479,7 +485,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/09/08/2019-09-08-los-write-up-18-nightmare/">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/08/2019-08-08-ubuntu-on-wsl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/50944735.jpeg">
@@ -492,7 +498,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/08/2019-09-08-los-write-up-18-nightmare/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.18 Nightmare</a>
+          <a href="/2019/08/08/2019-08-08-ubuntu-on-wsl/" class="post-title-link" itemprop="url">WSL 환경에 Ubuntu 설정하기</a>
         </h2>
 
         <div class="post-meta-container">
@@ -503,7 +509,7 @@
       </span>
       <span class="post-meta-item-text">작성일</span>
 
-      <time title="Post created: 2019-09-08 22:19:09" itemprop="dateCreated datePublished" datetime="2019-09-08T22:19:09+09:00">2019-09-08</time>
+      <time title="Post created: 2019-08-08 20:28:57" itemprop="dateCreated datePublished" datetime="2019-08-08T20:28:57+09:00">2019-08-08</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -518,7 +524,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
+          <a href="/categories/%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">개발 환경 구축</span></a>
         </span>
     </span>
 
@@ -531,8 +537,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/09/08/2019-09-08-los-write-up-18-nightmare/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/08/2019-09-08-los-write-up-18-nightmare/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/08/08/2019-08-08-ubuntu-on-wsl/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/08/2019-08-08-ubuntu-on-wsl/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -546,17 +552,28 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
+          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
 
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 18번 nightmare 문제에 대하여 정리한다.</p>
+<p>Windows 10 버전 1607 이상에서는 가상 머신이 없이도 Linux 환경에서 작업할 수 있다.<br>바로 Windows Subsystem for Linux, 줄여서 WSL이 있기 때문이다.</p>
+<p>이 글에서는 Windows Subsystem for Linux 환경을 이용하여 Windows를 사용하며 Ubuntu도 사용하는 방법을 정리한다.</p>
 <span id="more"></span>
 
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p>주석 필터링을 우회하고 MySQL Auto Casting을 이용하여 SQL Injection을 할 수 있는지 확인한다.</p>
-<h3 id="필요-배경-지식"><a href="#필요-배경-지식" class="headerlink" title="필요 배경 지식"></a>필요 배경 지식</h3><h4 id="MySQL-Type-Conversion-Auto-Casting"><a href="#MySQL-Type-Conversion-Auto-Casting" class="headerlink" title="MySQL Type Conversion, Auto Casting"></a>MySQL Type Conversion, Auto Casting</h4>
+<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><p>다음과 같은 순서로 WSL을 통해 Ubuntu를 설치할 수 있다.</p>
+<ol>
+<li>제어판 → 프로그램 → 프로그램 및 기능 → Windows 기능 켜기/끄기를 선택한다.</li>
+<li>목록에서 Linux용 Windows 하위 시스템을 찾아 체크박스에 체크한다.</li>
+<li>확인 버튼을 누르면 자동으로 설치가 되며 설치가 완료되면 안내에 따라 컴퓨터를 재부팅한다.</li>
+<li>컴퓨터에 내장된 Microsoft Store를 열고 Ubuntu를 검색하여 설치한다.</li>
+<li>설치가 완료되면 Ubuntu 앱을 연다.</li>
+<li>콘솔 창이 뜨면 조금 기다린다.</li>
+<li>Enter new UNIX username 문구가 나타나면 Ubuntu에서 사용할 계정을 입력한다.</li>
+<li>그 후 비밀번호를 두 번 입력하면 설치가 완료된다.</li>
+</ol>
+<h2 id="장단점"><a href="#장단점" class="headerlink" title="장단점"></a>장단점</h2><p>시스템 구축과 관련된 일을 하다보면 윈도우에서는 제약이 너무 많아서 리눅스 환경이 가장 적합하다고 느껴진다.<br>개발 일을 해도 Python이나 Node.js 등등 윈도우를 지원하긴 하지만 환경 구성에는 리눅스에 비빌 수가 없다.</p>
+<p>그런데 막상 우분투 데스크탑을 깔아버리면 뱅킹도 안되고 게임도 안되고 쓰다가 지쳐서 에잉 다신 안 써 하면서 윈도우로 돌아오게 된다.<br>그러고 다시 아 불편해 리눅스 깔까? 무한 반복이다.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/08/2019-09-08-los-write-up-18-nightmare/#more" rel="contents">
+              <a class="btn" href="/2019/08/08/2019-08-08-ubuntu-on-wsl/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>
@@ -587,7 +604,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/09/07/2019-09-07-los-write-up-17-succubus/">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/06/2019-08-06-install-nodejs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/50944735.jpeg">
@@ -600,7 +617,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/07/2019-09-07-los-write-up-17-succubus/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.17 Succubus</a>
+          <a href="/2019/08/06/2019-08-06-install-nodejs/" class="post-title-link" itemprop="url">Node.js 설치하기</a>
         </h2>
 
         <div class="post-meta-container">
@@ -611,7 +628,7 @@
       </span>
       <span class="post-meta-item-text">작성일</span>
 
-      <time title="Post created: 2019-09-07 21:58:07" itemprop="dateCreated datePublished" datetime="2019-09-07T21:58:07+09:00">2019-09-07</time>
+      <time title="Post created: 2019-08-06 20:21:42" itemprop="dateCreated datePublished" datetime="2019-08-06T20:21:42+09:00">2019-08-06</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -626,7 +643,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
+          <a href="/categories/%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">시스템 구축</span></a>
         </span>
     </span>
 
@@ -639,8 +656,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/09/07/2019-09-07-los-write-up-17-succubus/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/07/2019-09-07-los-write-up-17-succubus/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/08/06/2019-08-06-install-nodejs/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/06/2019-08-06-install-nodejs/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -654,17 +671,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
+          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
 
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 17번 succubus 문제에 대하여 정리한다.</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/nodesource/distributions/blob/master/README.md">https://github.com/nodesource/distributions/blob/master/README.md</a></p>
+<p>위 페이지를 참고하여 Node.js를 설치하는 공식적인 방법을 정리한다.</p>
 <span id="more"></span>
 
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p><code>\</code>(백슬래시) 문자를 이용하여 SQL Injection을 할 수 있는지 확인한다.</p>
-<h3 id="소스-코드-분석"><a href="#소스-코드-분석" class="headerlink" title="소스 코드 분석"></a>소스 코드 분석</h3><p>succubus 문제의 php 소스 코드는 다음과 같다.</p>
+<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><p>다음 명령어를 이용하여 각 환경에서 Node.js를 설치할 수 있다.</p>
+<h3 id="Ubuntu-또는-Debian-기반"><a href="#Ubuntu-또는-Debian-기반" class="headerlink" title="Ubuntu 또는 Debian 기반"></a>Ubuntu 또는 Debian 기반</h3><h4 id="U-D-기반-Node-js-v12-x-설치"><a href="#U-D-기반-Node-js-v12-x-설치" class="headerlink" title="U/D 기반 Node.js v12.x 설치"></a>U/D 기반 Node.js v12.x 설치</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using Ubuntu</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br><span class="line"></span><br><span class="line"><span class="comment"># Using Debian, as root</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_12.x | bash -</span><br><span class="line">apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+
+<h4 id="U-D-기반-Node-js-v11-x-설치"><a href="#U-D-기반-Node-js-v11-x-설치" class="headerlink" title="U/D 기반 Node.js v11.x 설치"></a>U/D 기반 Node.js v11.x 설치</h4>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/07/2019-09-07-los-write-up-17-succubus/#more" rel="contents">
+              <a class="btn" href="/2019/08/06/2019-08-06-install-nodejs/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>
@@ -695,7 +714,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/09/01/2019-09-01-los-write-up-16-zombie-assassin/">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/04/2019-08-04-install-jdk-on-centos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/50944735.jpeg">
@@ -708,7 +727,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/09/01/2019-09-01-los-write-up-16-zombie-assassin/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.16 Zombie Assassin</a>
+          <a href="/2019/08/04/2019-08-04-install-jdk-on-centos/" class="post-title-link" itemprop="url">CentOS에 JDK 설치하기</a>
         </h2>
 
         <div class="post-meta-container">
@@ -719,7 +738,7 @@
       </span>
       <span class="post-meta-item-text">작성일</span>
 
-      <time title="Post created: 2019-09-01 20:47:20" itemprop="dateCreated datePublished" datetime="2019-09-01T20:47:20+09:00">2019-09-01</time>
+      <time title="Post created: 2019-08-04 13:33:35" itemprop="dateCreated datePublished" datetime="2019-08-04T13:33:35+09:00">2019-08-04</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -734,7 +753,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
+          <a href="/categories/%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">시스템 구축</span></a>
         </span>
     </span>
 
@@ -747,8 +766,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/09/01/2019-09-01-los-write-up-16-zombie-assassin/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/09/01/2019-09-01-los-write-up-16-zombie-assassin/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/08/04/2019-08-04-install-jdk-on-centos/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/04/2019-08-04-install-jdk-on-centos/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -762,17 +781,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
+          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
 
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 16번 zombie-assassin 문제에 대하여 정리한다.</p>
+<p>CentOS 환경에 Java를 설치하는 방법을 정리한다.</p>
 <span id="more"></span>
 
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p><code>&#39;</code>을 필터링하는 <code>ereg()</code> 함수를 우회하여 SQL Injection을 할 수 있는지 확인한다.</p>
-<h3 id="필요-배경-지식"><a href="#필요-배경-지식" class="headerlink" title="필요 배경 지식"></a>필요 배경 지식</h3><h4 id="ereg"><a href="#ereg" class="headerlink" title="ereg"></a>ereg</h4>
+<h2 id="OpenJDK"><a href="#OpenJDK" class="headerlink" title="OpenJDK"></a>OpenJDK</h2><h3 id="OpenJDK-버전"><a href="#OpenJDK-버전" class="headerlink" title="OpenJDK 버전"></a>OpenJDK 버전</h3><p>2019년 07월 29일 기준으로 최신 버전인 build 12+32를 이용하여 설명한다.</p>
+<h3 id="OpenJDK-다운로드"><a href="#OpenJDK-다운로드" class="headerlink" title="OpenJDK 다운로드"></a>OpenJDK 다운로드</h3><p><a target="_blank" rel="noopener" href="http://jdk.java.net/">http://jdk.java.net</a></p>
+<p>위 사이트에서 JDK 최신 버전의 링크를 복사한다.</p>
+<p>본 문서 작성일 기준으로 다음과 같았다.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/01/2019-09-01-los-write-up-16-zombie-assassin/#more" rel="contents">
+              <a class="btn" href="/2019/08/04/2019-08-04-install-jdk-on-centos/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>
@@ -803,7 +823,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/31/2019-08-31-los-write-up-15-assassin/">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/03/2019-08-03-install-docker-on-centos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/50944735.jpeg">
@@ -816,7 +836,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/31/2019-08-31-los-write-up-15-assassin/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.15 Assassin</a>
+          <a href="/2019/08/03/2019-08-03-install-docker-on-centos/" class="post-title-link" itemprop="url">CentOS에 Docker 설치하기</a>
         </h2>
 
         <div class="post-meta-container">
@@ -827,7 +847,7 @@
       </span>
       <span class="post-meta-item-text">작성일</span>
 
-      <time title="Post created: 2019-08-31 20:34:41" itemprop="dateCreated datePublished" datetime="2019-08-31T20:34:41+09:00">2019-08-31</time>
+      <time title="Post created: 2019-08-03 13:26:42" itemprop="dateCreated datePublished" datetime="2019-08-03T13:26:42+09:00">2019-08-03</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
@@ -842,7 +862,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
+          <a href="/categories/%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">시스템 구축</span></a>
         </span>
     </span>
 
@@ -855,8 +875,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/08/31/2019-08-31-los-write-up-15-assassin/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/31/2019-08-31-los-write-up-15-assassin/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/08/03/2019-08-03-install-docker-on-centos/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/03/2019-08-03-install-docker-on-centos/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -870,17 +890,19 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
+          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
 
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 15번 assassin 문제에 대하여 정리한다.</p>
+<p>CentOS에 Docker를 설치하는 방법을 정리한다.</p>
 <span id="more"></span>
 
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p><code>LIKE</code> 연산자 뒤에 오는 문자열에 Blind SQL Injection을 하여 <code>pw</code>를 알아낼 수 있는지 확인한다.</p>
-<h3 id="필요-배경-지식"><a href="#필요-배경-지식" class="headerlink" title="필요 배경 지식"></a>필요 배경 지식</h3><h4 id="SQL-패턴-매칭"><a href="#SQL-패턴-매칭" class="headerlink" title="SQL 패턴 매칭"></a>SQL 패턴 매칭</h4>
+<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><h3 id="Update-packages"><a href="#Update-packages" class="headerlink" title="Update packages"></a>Update packages</h3><p>다음 명령어로 yum으로 설치된 모든 패키지의 업데이트를 진행한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update -y</span><br></pre></td></tr></table></figure>
+
+<h3 id="Docker-설치"><a href="#Docker-설치" class="headerlink" title="Docker 설치"></a>Docker 설치</h3><p>다음 명령어로 yum을 이용하여 Docker를 설치한다.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y docker</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/08/31/2019-08-31-los-write-up-15-assassin/#more" rel="contents">
+              <a class="btn" href="/2019/08/03/2019-08-03-install-docker-on-centos/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>
@@ -911,7 +933,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/25/2019-08-25-los-write-up-14-giant/">
+    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/01/2019-08-02-install-centos/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/50944735.jpeg">
@@ -924,7 +946,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/25/2019-08-25-los-write-up-14-giant/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.14 Giant</a>
+          <a href="/2019/08/01/2019-08-02-install-centos/" class="post-title-link" itemprop="url">CentOS 설치하기</a>
         </h2>
 
         <div class="post-meta-container">
@@ -935,14 +957,14 @@
       </span>
       <span class="post-meta-item-text">작성일</span>
 
-      <time title="Post created: 2019-08-25 23:19:56" itemprop="dateCreated datePublished" datetime="2019-08-25T23:19:56+09:00">2019-08-25</time>
+      <time title="Post created: 2019-08-02 04:43:35" itemprop="dateCreated datePublished" datetime="2019-08-02T04:43:35+09:00">2019-08-02</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Updated at: 2021-03-25 23:34:54" itemprop="dateModified" datetime="2021-03-25T23:34:54+09:00">2021-03-25</time>
+        <time title="Updated at: 2019-08-04 14:15:25" itemprop="dateModified" datetime="2019-08-04T14:15:25+09:00">2019-08-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -950,7 +972,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
+          <a href="/categories/%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">시스템 구축</span></a>
         </span>
     </span>
 
@@ -963,8 +985,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/2019/08/25/2019-08-25-los-write-up-14-giant/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/25/2019-08-25-los-write-up-14-giant/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/08/01/2019-08-02-install-centos/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/01/2019-08-02-install-centos/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -978,17 +1000,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
+          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
 
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 14번 giant 문제에 대하여 정리한다.</p>
+<p>운영체제 CentOS를 설치하는 방법을 정리한다.</p>
 <span id="more"></span>
 
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p><code>\n</code>, <code>\r</code>, <code>\t</code>, <code>(공백)</code> 을 포함하지 않고 SQL Injection을 하여 공백 효과를 낼 수 있는지 확인한다.</p>
-<h3 id="필요-배경-지식"><a href="#필요-배경-지식" class="headerlink" title="필요 배경 지식"></a>필요 배경 지식</h3><h4 id="공백-n-r-t을-제외한-한-문자-공백문자-대체"><a href="#공백-n-r-t을-제외한-한-문자-공백문자-대체" class="headerlink" title="(공백), \n, \r, \t을 제외한 한 문자 공백문자 대체"></a><code>(공백)</code>, <code>\n</code>, <code>\r</code>, <code>\t</code>을 제외한 한 문자 공백문자 대체</h4>
+<h3 id="버전"><a href="#버전" class="headerlink" title="버전"></a>버전</h3><p>2019년 07월 29일 기준으로 최신 버전인 CentOS 7 1810 버전을 이용하여 설명한다.</p>
+<h2 id="CentOS-다운로드"><a href="#CentOS-다운로드" class="headerlink" title="CentOS 다운로드"></a>CentOS 다운로드</h2><p><a target="_blank" rel="noopener" href="https://www.centos.org/download/">https://www.centos.org/download/</a></p>
+<p>위 경로에서 최신 버전의 CentOS DVD ISO 파일을 다운로드한다.</p>
+<h2 id="CentOS-설치-환경-구성"><a href="#CentOS-설치-환경-구성" class="headerlink" title="CentOS 설치 환경 구성"></a>CentOS 설치 환경 구성</h2><p>다음 중 하나의 방식으로 CentOS 설치 환경을 구성한다.</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/08/25/2019-08-25-los-write-up-14-giant/#more" rel="contents">
+              <a class="btn" href="/2019/08/01/2019-08-02-install-centos/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>
@@ -1011,333 +1034,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/23/2019-08-24-los-write-up-13-bugbear/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/50944735.jpeg">
-      <meta itemprop="name" content="Minsu Kim">
-      <meta itemprop="description" content="Ebb & flow">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="minsu's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/23/2019-08-24-los-write-up-13-bugbear/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.13 Bugbear</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2019-08-24 01:53:32" itemprop="dateCreated datePublished" datetime="2019-08-24T01:53:32+09:00">2019-08-24</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Updated at: 2021-03-25 23:34:54" itemprop="dateModified" datetime="2021-03-25T23:34:54+09:00">2021-03-25</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/08/23/2019-08-24-los-write-up-13-bugbear/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/23/2019-08-24-los-write-up-13-bugbear/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
-
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 13번 bugbear 문제에 대하여 정리한다.</p>
-<span id="more"></span>
-
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p><code>&#39;</code>, <code>substr</code>, <code>ascii</code>, <code>=</code>을 대소문자 구분 없이 포함하지 않고 Blind SQL Injection을 하여 <code>pw</code>를 알아낼 수 있는지 확인한다.</p>
-<h3 id="필요-배경-지식"><a href="#필요-배경-지식" class="headerlink" title="필요 배경 지식"></a>필요 배경 지식</h3><h4 id="addslashes"><a href="#addslashes" class="headerlink" title="addslashes"></a>addslashes</h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/23/2019-08-24-los-write-up-13-bugbear/#more" rel="contents">
-                더 읽어보기 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/23/2019-08-23-los-write-up-12-darkknight/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/50944735.jpeg">
-      <meta itemprop="name" content="Minsu Kim">
-      <meta itemprop="description" content="Ebb & flow">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="minsu's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/23/2019-08-23-los-write-up-12-darkknight/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.12 Darkknight</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2019-08-23 10:28:26" itemprop="dateCreated datePublished" datetime="2019-08-23T10:28:26+09:00">2019-08-23</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Updated at: 2021-03-25 23:34:54" itemprop="dateModified" datetime="2021-03-25T23:34:54+09:00">2021-03-25</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/08/23/2019-08-23-los-write-up-12-darkknight/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/23/2019-08-23-los-write-up-12-darkknight/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
-
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 12번 darkknight 문제에 대하여 정리한다.</p>
-<span id="more"></span>
-
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p><code>&#39;</code>, <code>substr</code>, <code>ascii</code>, <code>=</code>을 대소문자 구분 없이 포함하지 않고 Blind SQL Injection을 하여 <code>pw</code>를 알아낼 수 있는지 확인한다.</p>
-<h3 id="소스-코드-분석"><a href="#소스-코드-분석" class="headerlink" title="소스 코드 분석"></a>소스 코드 분석</h3><p>darkknight 문제의 php 소스 코드는 다음과 같다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/23/2019-08-23-los-write-up-12-darkknight/#more" rel="contents">
-                더 읽어보기 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/22/2019-08-22-los-write-up-11-golem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/50944735.jpeg">
-      <meta itemprop="name" content="Minsu Kim">
-      <meta itemprop="description" content="Ebb & flow">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="minsu's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/22/2019-08-22-los-write-up-11-golem/" class="post-title-link" itemprop="url">Lord of SQL Injection Write Up No.11 Golem</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2019-08-22 21:16:21" itemprop="dateCreated datePublished" datetime="2019-08-22T21:16:21+09:00">2019-08-22</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Updated at: 2019-08-23 10:33:54" itemprop="dateModified" datetime="2019-08-23T10:33:54+09:00">2019-08-23</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Write-Up/" itemprop="url" rel="index"><span itemprop="name">Write Up</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/08/22/2019-08-22-los-write-up-11-golem/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/22/2019-08-22-los-write-up-11-golem/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2><img src="/image/los-main.png" class width="300">
-
-<p>SQL Injection에 대한 지식을 쌓기 위해 <a target="_blank" rel="noopener" href="https://los.eagle-jump.org/">Lord of SQL Injection 사이트</a>의 문제를 풀고 해답을 정리한다.</p>
-<p>이 문서에서는 Lord of SQL Injection 11번 golem 문제에 대하여 정리한다.</p>
-<span id="more"></span>
-
-<h2 id="문제-분석"><a href="#문제-분석" class="headerlink" title="문제 분석"></a>문제 분석</h2><h3 id="문제-출제-의도"><a href="#문제-출제-의도" class="headerlink" title="문제 출제 의도"></a>문제 출제 의도</h3><p><code>and</code>, <code>or</code>, <code>substr(</code>, <code>=</code>을 대소문자 구분 없이 포함하지 않고 Blind SQL Injection을 하여 <code>pw</code>를 알아낼 수 있는지 확인한다.</p>
-<h3 id="필요-배경-지식"><a href="#필요-배경-지식" class="headerlink" title="필요 배경 지식"></a>필요 배경 지식</h3><h4 id="addslashes"><a href="#addslashes" class="headerlink" title="addslashes"></a>addslashes</h4>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/22/2019-08-22-los-write-up-11-golem/#more" rel="contents">
-                더 읽어보기 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
-  </nav>
 
 
 <script>
