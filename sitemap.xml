@@ -4,7 +4,7 @@
   <url>
     <loc>https://minsukin.github.io/about/index.html</loc>
     
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     
   </url>
   
@@ -149,13 +149,6 @@
   </url>
   
   <url>
-    <loc>https://minsukin.github.io/2019/08/09/2019-08-09-install-mobaxterm-on-windows/</loc>
-    
-    <lastmod>2021-03-25</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://minsukin.github.io/2019/08/10/2019-08-10-python-enum/</loc>
     
     <lastmod>2021-03-25</lastmod>
@@ -171,13 +164,6 @@
   
   <url>
     <loc>https://minsukin.github.io/2019/08/06/2019-08-06-install-nodejs/</loc>
-    
-    <lastmod>2021-03-25</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://minsukin.github.io/2019/08/05/2019-08-05-run-kafka-with-docker/</loc>
     
     <lastmod>2021-03-25</lastmod>
     
@@ -219,37 +205,16 @@
   </url>
   
   <url>
-    <loc>https://minsukin.github.io/2019/08/07/2019-08-07-change-docker-data-dir/</loc>
-    
-    <lastmod>2019-08-10</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://minsukin.github.io/2019/08/01/2019-08-02-install-centos/</loc>
     
     <lastmod>2019-08-04</lastmod>
     
   </url>
   
-  <url>
-    <loc>https://minsukin.github.io/2019/08/01/2019-08-01-start-blog/</loc>
-    
-    <lastmod>2019-08-01</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://minsukin.github.io/2019/07/31/2019-08-01-hello-world/</loc>
-    
-    <lastmod>2019-08-01</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>https://minsukin.github.io/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -257,133 +222,91 @@
   
   <url>
     <loc>https://minsukin.github.io/tags/CentOS/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Docker/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Java/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/JDK/</loc>
-    <lastmod>2021-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://minsukin.github.io/tags/Zookeeper/</loc>
-    <lastmod>2021-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://minsukin.github.io/tags/Kafka/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Node-js/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/WSL/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Ubuntu/</loc>
-    <lastmod>2021-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://minsukin.github.io/tags/SSH/</loc>
-    <lastmod>2021-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://minsukin.github.io/tags/Windows/</loc>
-    <lastmod>2021-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://minsukin.github.io/tags/MobaXterm/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Terminal/</loc>
-    <lastmod>2021-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://minsukin.github.io/tags/X11/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Python/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Enum/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Zsh/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Lord-of-SQL-Injection/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/tags/Infosec/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -391,36 +314,29 @@
 
   
   <url>
-    <loc>https://minsukin.github.io/categories/%EC%9E%A1%EB%8B%B4/</loc>
-    <lastmod>2021-03-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://minsukin.github.io/categories/%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/categories/%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/categories/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://minsukin.github.io/categories/Write-Up/</loc>
-    <lastmod>2021-03-25</lastmod>
+    <lastmod>2021-04-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

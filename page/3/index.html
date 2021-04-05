@@ -201,20 +201,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">포스트</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">카테고리</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">태그</span></a>
       </div>
   </nav>
@@ -485,117 +485,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/09/2019-08-09-install-mobaxterm-on-windows/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Minsu Kim">
-      <meta itemprop="description" content="효율 중시 백엔드 개발자">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="minsu's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/09/2019-08-09-install-mobaxterm-on-windows/" class="post-title-link" itemprop="url">Windows에 MobaXterm 설치하기</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2019-08-09 13:24:41" itemprop="dateCreated datePublished" datetime="2019-08-09T13:24:41+09:00">2019-08-09</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Updated at: 2021-03-25 23:34:54" itemprop="dateModified" datetime="2021-03-25T23:34:54+09:00">2021-03-25</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">개발 환경 구축</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/08/09/2019-08-09-install-mobaxterm-on-windows/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/09/2019-08-09-install-mobaxterm-on-windows/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
-
-<p>보통 컴퓨터 사면 게임도 해야 되고 인터넷 뱅킹도 해야 되고 하니 거의 무조건 Windows를 설치한다.<br>근데 소프트웨어를 구동하고 서비스하기 위한 서버에서는 서버 구축하기에 편하도록 리눅스를 사용하는 곳이 많다.<br>그리고 한 서버에 여러 명이 작업을 해야 하기 때문에 SSH라는 기술을 이용해서 원격으로 접속한다.</p>
-<span id="more"></span>
-
-<p>리눅스나 macOS의 경우 기본 내장된 터미널 도구를 이용하여 서버에 SSH로 접속할 수 있다.<br>그런데 Windows는 기본 내장된 터미널이 CMD, Powershell 이런 것들이라 서버에 접속하는 등의 일이 잘 안 된다.</p>
-<p>MobaXterm은 X11 서버 등의 여러 도구를 포함한 SSH 클라이언트 소프트웨어다.<br>Windows 환경에서 실행할 수 있으며 나도 직접 쓰고 있는 도구이다.<br>넷사랑 사의 Xmanager 등과 비슷한 위치에 있는 도구라고 이해하면 된다.<br>하지만 Xmanager 등은 유료 소프트웨어인데 반해 MobaXterm은 GNU 라이센스를 따르기 때문에 무료 버전은 회사에서 써도 문제가 없다.<br>그래서 Windows 환경을 사용하고 있다면 안 쓸 이유가 없다.</p>
-<p>이 글에서는 MobaXterm을 설치하고 사용하는 방법에 대하여 정리한다.</p>
-<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><p>MobaXterm은 <a target="_blank" rel="noopener" href="https://mobaxterm.mobatek.net/">공식 홈페이지</a>가 있다.</p>
-<p>공식 홈페이지에서 Download 탭을 선택하고 무료인 Home Edition을 다운로드한다.</p>
-<p>Portable 버전과 Installer 버전이 있는데 그냥 실행하든 설치해서 실행하든 별 차이 없으니 원하는 대로 고르면 된다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/09/2019-08-09-install-mobaxterm-on-windows/#more" rel="contents">
-                더 읽어보기 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/08/2019-08-08-ubuntu-on-wsl/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -715,117 +604,6 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/07/2019-08-07-change-docker-data-dir/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Minsu Kim">
-      <meta itemprop="description" content="효율 중시 백엔드 개발자">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="minsu's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/07/2019-08-07-change-docker-data-dir/" class="post-title-link" itemprop="url">Docker 데이터 디렉토리 변경</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2019-08-07 20:58:33" itemprop="dateCreated datePublished" datetime="2019-08-07T20:58:33+09:00">2019-08-07</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Updated at: 2019-08-11 01:50:12" itemprop="dateModified" datetime="2019-08-11T01:50:12+09:00">2019-08-11</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">시스템 구축</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/08/07/2019-08-07-change-docker-data-dir/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/07/2019-08-07-change-docker-data-dir/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
-
-<p>Docker는 기본적으로 <code>/var/lib/docker</code> 디렉토리에 Docker Image 등의 데이터를 저장한다.<br>이 상태로 두면 서버의 루트 용량이 적을 경우 Docker의 데이터로 인해 루트가 가득 차 각종 오류를 일으킬 수 있다.</p>
-<p>따라서 Docker 데이터 디렉토리를 큰 용량을 가진 별도의 디렉토리로 변경할 필요가 있다.<br>이 페이지에서는 <code>/home/docker</code> 디렉토리로 변경한다.</p>
-<span id="more"></span>
-
-<h2 id="방법"><a href="#방법" class="headerlink" title="방법"></a>방법</h2><h3 id="Ubuntu-Debian-Docker-데이터-디렉토리-변경"><a href="#Ubuntu-Debian-Docker-데이터-디렉토리-변경" class="headerlink" title="Ubuntu/Debian Docker 데이터 디렉토리 변경"></a>Ubuntu/Debian Docker 데이터 디렉토리 변경</h3><p>먼저 다음 명령어를 이용하여 실행 중인 Docker 프로세스를 중지한다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure>
-
-<p><code>/etc/default/docker</code> 파일을 다음과 같이 수정한다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DOCKER_OPTS=<span class="string">&quot;-g /home/docker&quot;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/07/2019-08-07-change-docker-data-dir/#more" rel="contents">
-                더 읽어보기 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/06/2019-08-06-install-nodejs/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -906,116 +684,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/06/2019-08-06-install-nodejs/#more" rel="contents">
-                더 읽어보기 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://minsukin.github.io/2019/08/05/2019-08-05-run-kafka-with-docker/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Minsu Kim">
-      <meta itemprop="description" content="효율 중시 백엔드 개발자">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="minsu's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/08/05/2019-08-05-run-kafka-with-docker/" class="post-title-link" itemprop="url">Docker를 이용하여 Zookeeper와 Kafka 실행하기</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">작성일</span>
-
-      <time title="Post created: 2019-08-05 20:31:52" itemprop="dateCreated datePublished" datetime="2019-08-05T20:31:52+09:00">2019-08-05</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Updated at: 2021-03-25 23:34:54" itemprop="dateModified" datetime="2021-03-25T23:34:54+09:00">2021-03-25</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95/" itemprop="url" rel="index"><span itemprop="name">시스템 구축</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2019/08/05/2019-08-05-run-kafka-with-docker/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/08/05/2019-08-05-run-kafka-with-docker/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
-
-<p>Docker를 이용하여 Kafka와 Zookeeper 서비스를 구동하는 방법을 정리한다.</p>
-<span id="more"></span>
-
-<h3 id="버전"><a href="#버전" class="headerlink" title="버전"></a>버전</h3><p>2019년 07월 29일 시점에서 최신 버전인 Kafka 2.12-2.3.0, Zookeeper 3.5.5 버전을 기준으로 설명한다.</p>
-<h2 id="Docker-Network-설정"><a href="#Docker-Network-설정" class="headerlink" title="Docker Network 설정"></a>Docker Network 설정</h2><p>다음 명령어를 이용하여 Kafka와 Zookeeper가 통신하기 위해 사용할 Docker Network를 생성한다.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker network create kafka</span><br></pre></td></tr></table></figure>
-
-<h2 id="Zookeeper-서비스-구동"><a href="#Zookeeper-서비스-구동" class="headerlink" title="Zookeeper 서비스 구동"></a>Zookeeper 서비스 구동</h2><p><a target="_blank" rel="noopener" href="https://hub.docker.com/_/zookeeper">https://hub.docker.com/_/zookeeper</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/05/2019-08-05-run-kafka-with-docker/#more" rel="contents">
                 더 읽어보기 &raquo;
               </a>
             </div>
@@ -1367,7 +1035,7 @@
 
 
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="다음 페이지"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="이전 페이지"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 

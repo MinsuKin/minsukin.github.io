@@ -1,71 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2019/07/31/2019-08-01-hello-world/</url>
-    <content><![CDATA[<h2 id="Hexo로-블로그-만들었다"><a href="#Hexo로-블로그-만들었다" class="headerlink" title="Hexo로 블로그 만들었다"></a>Hexo로 블로그 만들었다</h2><p>Hexo에서 자동으로 만들어 준 글이다.</p>
-<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>잡담</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>블로그 시작!</title>
-    <url>/2019/08/01/2019-08-01-start-blog/</url>
-    <content><![CDATA[<h2 id="블로그를-또-다시-만들다"><a href="#블로그를-또-다시-만들다" class="headerlink" title="블로그를 또 다시 만들다"></a>블로그를 또 다시 만들다</h2><blockquote>
-<p>항상 만들고 방치해서 잊혀진 나의 블로그들<br>이번에는 진짜 잘 해보자 ㅜㅜ</p>
-</blockquote>
-<p>블로그를 만들었다.</p>
-<p>잠자는 네이버 블로그와 NAS에서 죽은 워드프레스와<br>“이젠 정말 제대로 해보자!”며 만든 티스토리 블로그를 뒤로 하고…</p>
-<span id="more"></span>
-
-<p>사실 Notion을 알기 전에는 정보를 거의 오프라인에서만 기록했고<br>얼마 안 됐지만 그 후에는 Notion에 정리하고 있었기 때문에<br>블로그를 단순히 기록하는 곳이라고 생각하던 나는 그동안 블로그의 필요성을 전혀 느끼지 못했다.</p>
-<p>그런데 최근 GitHub에 관심이 생겨서 이것저것 찾아보던 중에<br>오래전에 흘려들었던 “GitHub Pages를 이용한 블로그 구축”에 대해 자세히 알게 되었다.</p>
-<p><strong>블로그 활동을 하는 것이 모두 GitHub에 커밋으로 남는다니..!</strong><br>1일 1포스트와 1일 1커밋을 동시에?!?! 라는 생각으로 블로그 만들기에 바로 착수했다.</p>
-<h3 id="Jekyll을-이용한-블로그-구축-시도"><a href="#Jekyll을-이용한-블로그-구축-시도" class="headerlink" title="Jekyll을 이용한 블로그 구축 시도"></a>Jekyll을 이용한 블로그 구축 시도</h3><p>처음에는 구글에 “GitHub 블로그”라고 검색해서 뜨는<br><a href="https://dreamgonfly.github.io/2018/01/27/jekyll-remote-theme.html">쉽고 빠르게 수준 급의 GitHub 블로그 만들기</a> 같은 글을 보고<br>Jekyll과 minimal-mistakes 테마를 이용해서 블로그를 구성했다.</p>
-<p>근데 그 날 밤에 게임을 하다가 친구에게 조언을 받았다.</p>
-<blockquote>
-<p>친구: 아직도 Jekyll로 블로그 만드는 흑우가 있다?<br>나: GitHub 블로그는 다 Jekyll로 만드는 거 아니여?<br>친구: ;; 구글에 Hexo 검색 ㄱ</p>
-</blockquote>
-<p>Jekyll은 Ruby 기반인데 반해 Hexo는 Node.js 기반이었다.<br>나는 Ruby는 하나도 모르지만 Node.js는 조금 해봤기 때문에<br>그걸 알고있는 친구의 조언을 감사히 받아들여 Hexo로 다시 블로그를 구축하기 시작했다.</p>
-<h3 id="Hexo를-이용한-블로그-구축"><a href="#Hexo를-이용한-블로그-구축" class="headerlink" title="Hexo를 이용한 블로그 구축"></a>Hexo를 이용한 블로그 구축</h3><p><a href="https://hexo.io/ko/">Hexo 공식 사이트</a>와 Hexo로 만들어진 믿음직한 블로그의 <a href="https://marv-0.github.io/2018/05/02/Hexo%20+%20Github%20%EB%B8%94%EB%A1%9C%EA%B7%B8%20%EA%B5%AC%EC%B6%95/">Hexo + Github 블로그 구축</a> 글을 참고해서<br>기본적인 틀과 Jenkins를 이용하여 자동으로 Deploy 하는 구조는 잘 만들었다.</p>
-<p>그런데 진짜 작업은 따로 있었으니… 바로 <strong>테마 적용 및 설정</strong>이었다.</p>
-<h4 id="Hexo에-NexT-테마-입히기"><a href="#Hexo에-NexT-테마-입히기" class="headerlink" title="Hexo에 NexT 테마 입히기"></a>Hexo에 NexT 테마 입히기</h4><p><a href="https://theme-next.org/">NexT 테마 공식 사이트</a>를 참고하여 NexT 테마를 설치하고 설정하였다.<br>여기서는 한 줄로 정리할 수 있지만 이 작업에 거의 8시간은 쓴 것 같다.</p>
-<p>그래도 Disqus를 이용한 댓글 기능, Algolia를 이용한 검색 기능 등<br>사실상 Hexo와 NexT 테마에서 기본적으로 지원하는 기능들은 거의 다 쓸 수 있게 된 것 같아서 기분이 좋다.<br>이와 관련한 자세한 내용은 Hexo + NexT / Jenkin / GitHub Pages를 이용한 블로그 구축을 주제로<br>따로 정리를 해서 포스팅 할 예정이다.</p>
-<h2 id="앞으로-할-일"><a href="#앞으로-할-일" class="headerlink" title="앞으로 할 일"></a>앞으로 할 일</h2><ul>
-<li>마크다운 문법 다시 학습</li>
-<li>1일 1포스트 (1일 1커밋) 이상!<ul>
-<li>이전에 Notion 등에 정리했던 기록 중 공유할 만한 내용</li>
-<li>알고 있거나 새로 알게 된 정보 중 공유할 만한 내용</li>
-</ul>
-</li>
-<li>블로그 개인화<ul>
-<li>테마 부분 수정</li>
-<li>기능, 페이지 추가, 수정 등</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>잡담</category>
-      </categories>
-  </entry>
-  <entry>
     <title>CentOS 설치하기</title>
     <url>/2019/08/01/2019-08-02-install-centos/</url>
     <content><![CDATA[<h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
@@ -218,66 +153,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Docker를 이용하여 Zookeeper와 Kafka 실행하기</title>
-    <url>/2019/08/05/2019-08-05-run-kafka-with-docker/</url>
-    <content><![CDATA[<h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
-
-<p>Docker를 이용하여 Kafka와 Zookeeper 서비스를 구동하는 방법을 정리한다.</p>
-<span id="more"></span>
-
-<h3 id="버전"><a href="#버전" class="headerlink" title="버전"></a>버전</h3><p>2019년 07월 29일 시점에서 최신 버전인 Kafka 2.12-2.3.0, Zookeeper 3.5.5 버전을 기준으로 설명한다.</p>
-<h2 id="Docker-Network-설정"><a href="#Docker-Network-설정" class="headerlink" title="Docker Network 설정"></a>Docker Network 설정</h2><p>다음 명령어를 이용하여 Kafka와 Zookeeper가 통신하기 위해 사용할 Docker Network를 생성한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo docker network create kafka</span><br></pre></td></tr></table></figure>
-
-<h2 id="Zookeeper-서비스-구동"><a href="#Zookeeper-서비스-구동" class="headerlink" title="Zookeeper 서비스 구동"></a>Zookeeper 서비스 구동</h2><p><a href="https://hub.docker.com/_/zookeeper">https://hub.docker.com/_/zookeeper</a></p>
-<p>Zookeeper는 공식 Docker 이미지를 제공하고 있다.</p>
-<p>다음 명령어를 통해 Docker를 이용하여 Zookeeper 서비스를 실행한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d --name=zookeeper --net=kafka -p 2181:2181 zookeeper</span><br></pre></td></tr></table></figure>
-
-<h2 id="Kafka-서비스-구동"><a href="#Kafka-서비스-구동" class="headerlink" title="Kafka 서비스 구동"></a>Kafka 서비스 구동</h2><p><a href="https://hub.docker.com/r/wurstmeister/kafka">https://hub.docker.com/r/wurstmeister/kafka</a></p>
-<p>Kafka는 wurstmeister라는 사람이 만든 이미지를 이용하여 실행시킬 수 있다.</p>
-<p>다음 명령어를 통해 Docker를 이용하여 Kafka 서비스를 실행한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d --name kafka --net=kafka -p 9092:9092 -e KAFKA_ADVERTISED_LISTENERS=<span class="string">&quot;PLAINTEXT://localhost:9092&quot;</span> -e KAFKA_LISTENERS=<span class="string">&quot;PLAINTEXT://0.0.0.0:9092&quot;</span> -e KAFKA_ADVERTISED_HOST_NAME=<span class="string">&quot;127.0.0.1&quot;</span> -e KAFKA_ADVERTISED_PORT=<span class="string">&quot;9092&quot;</span> -e KAFKA_ZOOKEEPER_CONNECT=<span class="string">&quot;zookeeper:2181&quot;</span> -e KAFKA_CREATE_TOPICS=<span class="string">&quot;javainuse-topic:1:1&quot;</span> wurstmeister/kafka</span><br></pre></td></tr></table></figure>
-
-<h2 id="Kafka-서비스-테스트"><a href="#Kafka-서비스-테스트" class="headerlink" title="Kafka 서비스 테스트"></a>Kafka 서비스 테스트</h2><h2 id="확인-사항"><a href="#확인-사항" class="headerlink" title="확인 사항"></a>확인 사항</h2><h3 id="Java-설치-확인"><a href="#Java-설치-확인" class="headerlink" title="Java 설치 확인"></a>Java 설치 확인</h3><p>Java가 설치되어 있지 않으면 <a href="https://www.notion.so/93c3d7fb-8c5b-472f-af4f-8a7c67d51de1">CentOS에 JDK 설치</a> 문서를 참고하여 Java를 설치한다.</p>
-<h3 id="바이너리-다운로드"><a href="#바이너리-다운로드" class="headerlink" title="바이너리 다운로드"></a>바이너리 다운로드</h3><p><a href="https://kafka.apache.org/downloads">https://kafka.apache.org/downloads</a></p>
-<p>위 사이트에서 Kafka Docker 이미지의 버전과 동일한 버전의 바이너리 파일 주소를 복사한다.</p>
-<p>본 문서를 작성하는 시점에서는 다음과 같았다.</p>
-<p><a href="http://apache.mirror.cdnetworks.com/kafka/2.3.0/kafka_2.12-2.3.0.tgz">http://apache.mirror.cdnetworks.com/kafka/2.3.0/kafka_2.12-2.3.0.tgz</a></p>
-<p>다음 명령어를 통해 Kafka 바이너리 파일을 다운로드한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget http://apache.mirror.cdnetworks.com/kafka/2.3.0/kafka_2.12-2.3.0.tgz</span><br></pre></td></tr></table></figure>
-
-<p>다음 명령어를 통해 압축을 해제한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xzvf kafka_2.12-2.3.0.tgz</span><br></pre></td></tr></table></figure>
-
-<p>다음 명령어를 통해 안으로 들어간다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> kafka_2.12-2.3.0</span><br></pre></td></tr></table></figure>
-
-<h3 id="Topic-생성-테스트"><a href="#Topic-생성-테스트" class="headerlink" title="Topic 생성 테스트"></a>Topic 생성 테스트</h3><p>다음 명령어를 통해 Kafka Topic을 생성할 수 있다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bin/kafka-topics.sh --bootstrap-server localhost:9092 --create --topic <span class="built_in">test</span> --partitions 1 --replication-factor 1</span><br></pre></td></tr></table></figure>
-
-<h3 id="Topic-확인-테스트"><a href="#Topic-확인-테스트" class="headerlink" title="Topic 확인 테스트"></a>Topic 확인 테스트</h3><p>다음 명령어를 통해 Kafka Topic을 확인할 수 있다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe</span><br></pre></td></tr></table></figure>
-
-<h3 id="Consumer-테스트"><a href="#Consumer-테스트" class="headerlink" title="Consumer 테스트"></a>Consumer 테스트</h3><p>다음 명령어를 통해 Kafka Console Consumer를 테스트할 수 있다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bin/kafka-console-consumer.sh --from-beginning --bootstrap-server localhost:9092 --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Producer-테스트"><a href="#Producer-테스트" class="headerlink" title="Producer 테스트"></a>Producer 테스트</h3><p>다음 명령어를 통해 Kafka Console Consumer를 테스트할 수 있다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bin/kafka-console-producer.sh --broker-list localhost:9092 --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Topic-삭제-테스트"><a href="#Topic-삭제-테스트" class="headerlink" title="Topic 삭제 테스트"></a>Topic 삭제 테스트</h3><p>다음 명령어를 통해 Kafka Topic을 삭제할 수 있다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bin/kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>시스템 구축</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>Zookeeper</tag>
-        <tag>Kafka</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Node.js 설치하기</title>
     <url>/2019/08/06/2019-08-06-install-nodejs/</url>
     <content><![CDATA[<h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
@@ -304,53 +179,6 @@
       </categories>
       <tags>
         <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Docker 데이터 디렉토리 변경</title>
-    <url>/2019/08/07/2019-08-07-change-docker-data-dir/</url>
-    <content><![CDATA[<h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
-
-<p>Docker는 기본적으로 <code>/var/lib/docker</code> 디렉토리에 Docker Image 등의 데이터를 저장한다.<br>이 상태로 두면 서버의 루트 용량이 적을 경우 Docker의 데이터로 인해 루트가 가득 차 각종 오류를 일으킬 수 있다.</p>
-<p>따라서 Docker 데이터 디렉토리를 큰 용량을 가진 별도의 디렉토리로 변경할 필요가 있다.<br>이 페이지에서는 <code>/home/docker</code> 디렉토리로 변경한다.</p>
-<span id="more"></span>
-
-<h2 id="방법"><a href="#방법" class="headerlink" title="방법"></a>방법</h2><h3 id="Ubuntu-Debian-Docker-데이터-디렉토리-변경"><a href="#Ubuntu-Debian-Docker-데이터-디렉토리-변경" class="headerlink" title="Ubuntu/Debian Docker 데이터 디렉토리 변경"></a>Ubuntu/Debian Docker 데이터 디렉토리 변경</h3><p>먼저 다음 명령어를 이용하여 실행 중인 Docker 프로세스를 중지한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service docker stop</span><br></pre></td></tr></table></figure>
-
-<p><code>/etc/default/docker</code> 파일을 다음과 같이 수정한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">DOCKER_OPTS=<span class="string">&quot;-g /home/docker&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>기존 자료를 다음 명령어로 이동한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mv /var/lib/docker/* /home/docker/</span><br></pre></td></tr></table></figure>
-
-<p>다음 명령어를 이용하여 Docker 프로세스를 실행한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo service docker start</span><br></pre></td></tr></table></figure>
-
-<h3 id="CentOS-Docker-데이터-디렉토리-변경"><a href="#CentOS-Docker-데이터-디렉토리-변경" class="headerlink" title="CentOS Docker 데이터 디렉토리 변경"></a>CentOS Docker 데이터 디렉토리 변경</h3><p>먼저 다음 명령어를 이용하여 실행 중인 Docker 프로세스를 중지한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl stop docker</span><br></pre></td></tr></table></figure>
-
-<p><code>/usr/lib/systemd/system/docker.service</code> 파일을 다음과 같이 수정한다.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description&#x3D;Docker Application Container Engine</span><br><span class="line">Documentation&#x3D;https:&#x2F;&#x2F;docs.docker.com</span><br><span class="line">After&#x3D;network-online.target firewalld.service</span><br><span class="line">Wants&#x3D;network-online.target</span><br><span class="line">[Service]</span><br><span class="line">Type&#x3D;notify</span><br><span class="line"># the default is not to use systemd for cgroups because the delegate issues still</span><br><span class="line"># exists and systemd currently does not support the cgroup feature set required</span><br><span class="line"># for containers run by docker</span><br><span class="line">ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;dockerd -g &#x2F;home&#x2F;docker</span><br><span class="line">ExecReload&#x3D;&#x2F;bin&#x2F;kill -s HUP $MAINPID</span><br><span class="line"># Having non-zero Limit*s causes performance problems due to accounting overhead</span><br><span class="line"># in the kernel. We recommend using cgroups to do container-local accounting.</span><br><span class="line">LimitNOFILE&#x3D;infinity</span><br><span class="line">LimitNPROC&#x3D;infinity</span><br><span class="line">LimitCORE&#x3D;infinity</span><br><span class="line"># Uncomment TasksMax if your systemd version supports it.</span><br><span class="line"># Only systemd 226 and above support this version.</span><br><span class="line">#TasksMax&#x3D;infinity</span><br><span class="line">TimeoutStartSec&#x3D;0</span><br><span class="line"># set delegate yes so that systemd does not reset the cgroups of docker containers</span><br><span class="line">Delegate&#x3D;yes</span><br><span class="line"># kill only the docker process, not all processes in the cgroup</span><br><span class="line">KillMode&#x3D;process</span><br><span class="line"># restart the docker process if it exits prematurely</span><br><span class="line">Restart&#x3D;on-failure</span><br><span class="line">StartLimitBurst&#x3D;3</span><br><span class="line">StartLimitInterval&#x3D;60s</span><br><span class="line">[Install]</span><br><span class="line">WantedBy&#x3D;multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>ExecStart 부분의 맨 끝에 -g /home/docker 를 추가하였다.</p>
-<p>기존 자료를 다음 명령어로 이동한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mv /var/lib/docker/* /home/docker/</span><br></pre></td></tr></table></figure>
-
-<p>다음 명령어를 이용하여 Docker 프로세스를 실행한다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
-
-<h2 id="참고자료"><a href="#참고자료" class="headerlink" title="참고자료"></a>참고자료</h2><ul>
-<li><a href="https://www.flaticon.com/authors/icongeek26">Icons made by Icongeek26 CC 3.0 BY</a></li>
-<li><a href="http://dveamer.github.io/backend/DockerImageDirectory.html">Docker 설치 후 이미지 보관 디렉토리 변경</a></li>
-<li><a href="https://stackoverflow.com/questions/26166550/set-docker-opts-in-centos">Set Docker_Opts in centos</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>시스템 구축</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
       </tags>
   </entry>
   <entry>
@@ -389,49 +217,6 @@
       <tags>
         <tag>WSL</tag>
         <tag>Ubuntu</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Windows에 MobaXterm 설치하기</title>
-    <url>/2019/08/09/2019-08-09-install-mobaxterm-on-windows/</url>
-    <content><![CDATA[<h2 id="개요"><a href="#개요" class="headerlink" title="개요"></a>개요</h2>
-
-<p>보통 컴퓨터 사면 게임도 해야 되고 인터넷 뱅킹도 해야 되고 하니 거의 무조건 Windows를 설치한다.<br>근데 소프트웨어를 구동하고 서비스하기 위한 서버에서는 서버 구축하기에 편하도록 리눅스를 사용하는 곳이 많다.<br>그리고 한 서버에 여러 명이 작업을 해야 하기 때문에 SSH라는 기술을 이용해서 원격으로 접속한다.</p>
-<span id="more"></span>
-
-<p>리눅스나 macOS의 경우 기본 내장된 터미널 도구를 이용하여 서버에 SSH로 접속할 수 있다.<br>그런데 Windows는 기본 내장된 터미널이 CMD, Powershell 이런 것들이라 서버에 접속하는 등의 일이 잘 안 된다.</p>
-<p>MobaXterm은 X11 서버 등의 여러 도구를 포함한 SSH 클라이언트 소프트웨어다.<br>Windows 환경에서 실행할 수 있으며 나도 직접 쓰고 있는 도구이다.<br>넷사랑 사의 Xmanager 등과 비슷한 위치에 있는 도구라고 이해하면 된다.<br>하지만 Xmanager 등은 유료 소프트웨어인데 반해 MobaXterm은 GNU 라이센스를 따르기 때문에 무료 버전은 회사에서 써도 문제가 없다.<br>그래서 Windows 환경을 사용하고 있다면 안 쓸 이유가 없다.</p>
-<p>이 글에서는 MobaXterm을 설치하고 사용하는 방법에 대하여 정리한다.</p>
-<h2 id="설치"><a href="#설치" class="headerlink" title="설치"></a>설치</h2><p>MobaXterm은 <a href="https://mobaxterm.mobatek.net/">공식 홈페이지</a>가 있다.</p>
-<p>공식 홈페이지에서 Download 탭을 선택하고 무료인 Home Edition을 다운로드한다.</p>
-<p>Portable 버전과 Installer 버전이 있는데 그냥 실행하든 설치해서 실행하든 별 차이 없으니 원하는 대로 고르면 된다.</p>
-<p>그럼 설치는 끝난다.</p>
-<h2 id="실행"><a href="#실행" class="headerlink" title="실행"></a>실행</h2><p>설치된 MobaXterm을 실행하면 Home 탭이 열려있는 창이 뜬다.</p>
-<h3 id="SSH-서버-접속"><a href="#SSH-서버-접속" class="headerlink" title="SSH 서버 접속"></a>SSH 서버 접속</h3><p>좌측 Sessions 탭에 오른쪽 클릭을 하고 New session을 선택한다.</p>
-<p>세션을 만드는 창이 뜨면 SSH를 선택하고 서버 주소와 포트, 사용할 계정을 입력한 후 OK를 누른다.</p>
-<p>Sessions 탭에 만들어진 항목을 더블클릭하면 새로운 탭이 생기면서 접속이 된다.</p>
-<p>비밀번호를 치면 기억할지 물어보는데 Yes를 선택하면 다음부터는 비밀번호를 안 물어본다.</p>
-<h3 id="WSL-접속"><a href="#WSL-접속" class="headerlink" title="WSL 접속"></a>WSL 접속</h3><p>MobaXterm으로 WSL에 접속할 수도 있다.</p>
-<p>세션을 만들 때 WSL을 선택하고 본인이 설치한 리눅스 배포판을 선택한다.</p>
-<p>OK를 누르고 만들어진 항목을 더블클릭하면 WSL에 접속이 된다.</p>
-<h3 id="SSH-Tunnel"><a href="#SSH-Tunnel" class="headerlink" title="SSH Tunnel"></a>SSH Tunnel</h3><p>MobaXterm에 SSH Tunnel 도구가 있다.</p>
-<p>상단 도구 모음에 Tunneling이라는 라벨이 붙어 있는 항목을 선택하면 새 창이 뜨고 SSH Tunneling을 설정할 수 있다.</p>
-<p>SSH Tunneling에 대한 자세한 내용은 따로 정리해서 올리도록 하겠다.</p>
-<h3 id="저장된-비밀번호-관리"><a href="#저장된-비밀번호-관리" class="headerlink" title="저장된 비밀번호 관리"></a>저장된 비밀번호 관리</h3><p>Settings → General → MobaXterm passwords management 항목을 선택하면</p>
-<p>저장된 비밀번호를 확인하고 삭제하고 내보내는 등의 관리를 할 수가 있다.</p>
-<h2 id="문제-해결"><a href="#문제-해결" class="headerlink" title="문제 해결"></a>문제 해결</h2><h3 id="Home-End키가-안-먹는-문제"><a href="#Home-End키가-안-먹는-문제" class="headerlink" title="Home, End키가 안 먹는 문제"></a>Home, End키가 안 먹는 문제</h3><p>MobaXterm으로 접속하면 Home키를 이용한 라인 맨 앞으로 가기와 End키를 이용한 라인 맨 뒤로 가기 기능이 안 되는 경우가 있다.</p>
-<p>이 때는 사용 중인 쉘의 rc 스크립트에 다음 구문을 추가해주면 된다.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">bindkey</span> <span class="string">&#x27;^[[1~&#x27;</span> beginning-of-line</span><br><span class="line"><span class="built_in">bindkey</span> <span class="string">&#x27;^[[4~&#x27;</span> end-of-line</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>개발 환경 구축</category>
-      </categories>
-      <tags>
-        <tag>SSH</tag>
-        <tag>Windows</tag>
-        <tag>MobaXterm</tag>
-        <tag>Terminal</tag>
-        <tag>X11</tag>
       </tags>
   </entry>
   <entry>
