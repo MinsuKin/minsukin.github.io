@@ -6,7 +6,7 @@
   <link href="https://minsukin.github.io/atom.xml" rel="self"/>
   
   <link href="https://minsukin.github.io/"/>
-  <updated>2021-03-25T14:34:54.563Z</updated>
+  <updated>2021-04-05T20:00:51.417Z</updated>
   <id>https://minsukin.github.io/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java_day1</title>
+    <link href="https://minsukin.github.io/2021/04/05/java-day1/"/>
+    <id>https://minsukin.github.io/2021/04/05/java-day1/</id>
+    <published>2021-04-05T11:00:51.000Z</published>
+    <updated>2021-04-05T20:00:51.417Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Ubuntu에 Zsh 구성하기</title>
@@ -29,16 +42,7 @@
     <summary type="html">&lt;h2 id=&quot;개요&quot;&gt;&lt;a href=&quot;#개요&quot; class=&quot;headerlink&quot; title=&quot;개요&quot;&gt;&lt;/a&gt;개요&lt;/h2&gt;
 
 &lt;p&gt;개발 일을 하는 사람에게 뗄래야 뗄 수 없는 것이 바로 터미널 소프트웨어이다.&lt;br&gt;이왕 계속 보는 거 좀 이쁘면 기분이 좋지 않을까?&lt;/p&gt;
-&lt;p&gt;나와 같은 생각을 했던 많은 개발자들이 탄탄대로를 만들어 놓았다.&lt;br&gt;이 문서에서는 Ubuntu 환경에 Zsh를 설치하고 구성하는 방법을 정리한다.&lt;/p&gt;
-&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h2 id=&quot;Zsh-설치&quot;&gt;&lt;a href=&quot;#Zsh-설치&quot; class=&quot;headerlink&quot; title=&quot;Zsh 설치&quot;&gt;&lt;/a&gt;Zsh 설치&lt;/h2&gt;&lt;p&gt;다음 명령어를 이용하여 설치할 수 있다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install zsh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;다음 명령어를 이용하여 zsh를 현재 계정의 기본 쉘로 변경할 수 있다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;chsh -s /usr/bin/zsh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;oh-my-zsh-구성&quot;&gt;&lt;a href=&quot;#oh-my-zsh-구성&quot; class=&quot;headerlink&quot; title=&quot;oh-my-zsh 구성&quot;&gt;&lt;/a&gt;oh-my-zsh 구성&lt;/h2&gt;</summary>
+&lt;p&gt;나와 같은 생각을 했던 많은 개발자들이 탄탄대로를 만들어 놓았다.&lt;br&gt;이 문서에서는 Ubuntu 환경에 Zsh를 설치하고 구성하는 방법을 정리한다.&lt;/p&gt;</summary>
     
     
     
@@ -62,14 +66,7 @@
     
     
     <summary type="html">&lt;h2 id=&quot;개요&quot;&gt;&lt;a href=&quot;#개요&quot; class=&quot;headerlink&quot; title=&quot;개요&quot;&gt;&lt;/a&gt;개요&lt;/h2&gt;&lt;p&gt;현실의 문제를 프로그래밍으로 다루려고 고민하다 보면 조건에 따른 분기를 어떻게 처리할 것인지에 대해 생각하게 된다.&lt;br&gt;이 때 단순하고 전통적인 방식으로 조건을 확인하고 맞으면 이거, 아니면 저거 식의 if-else문을 사용해도 되지만&lt;br&gt;더 나은 프로그래밍 방식에 대한 가치관을 세우고 객체지향, 함수형 등의 다양한 개념을 접하다 보면&lt;br&gt;사람에 따라, 상황에 따라 열거형 클래스 등을 이용해서 처리하기도 한다.&lt;/p&gt;
-&lt;p&gt;Python에서는 3.4 버전부터 열거형 클래스인 Enum을 기본으로 탑재하였다.&lt;br&gt;이 문서에서는 이것을 사용하는 방법을 정리한다.&lt;/p&gt;
-&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h2 id=&quot;사용법&quot;&gt;&lt;a href=&quot;#사용법&quot; class=&quot;headerlink&quot; title=&quot;사용법&quot;&gt;&lt;/a&gt;사용법&lt;/h2&gt;&lt;h3 id=&quot;기본&quot;&gt;&lt;a href=&quot;#기본&quot; class=&quot;headerlink&quot; title=&quot;기본&quot;&gt;&lt;/a&gt;기본&lt;/h3&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; enum&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Color&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;enum.Enum&lt;/span&gt;):&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    RED = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    GREEN = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    BLUE = &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;&lt;code&gt;enum.Enum&lt;/code&gt; 클래스를 상속받는 &lt;code&gt;Color&lt;/code&gt; 클래스는 이제 열거형 상수로 이용된다.&lt;br&gt;이 예제에서는 정수를 이용하나 정수 뿐만 아니라 모든 자료형을 사용할 수 있다.&lt;/p&gt;
-&lt;p&gt;기본적인 사용에서는 다음과 같은 결과를 가져올 수 있다.&lt;br&gt;각 코드에 대한 반환값은 다음 줄에 주석으로 표기하였다.&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;print(Color)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# &amp;lt;enum &amp;#x27;Color&amp;#x27;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(Color.RED, Color.BLUE, Color.GREEN)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Color.RED Color.BLUE Color.GREEN&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(Color.RED.name)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# RED&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(Color.RED.value)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(&lt;span class=&quot;built_in&quot;&gt;repr&lt;/span&gt;(Color.RED))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# &amp;lt;Color.RED: 0&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(&lt;span class=&quot;built_in&quot;&gt;type&lt;/span&gt;(Color.RED))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# &amp;lt;enum &amp;#x27;Color&amp;#x27;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(Color(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;), Color(&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Color.RED Color.BLUE&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(Color[&lt;span class=&quot;string&quot;&gt;&amp;#x27;RED&amp;#x27;&lt;/span&gt;], Color[&lt;span class=&quot;string&quot;&gt;&amp;#x27;BLUE&amp;#x27;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Color.RED Color.BLUE&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(Color.RED == Color.RED)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# True&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(Color.RED == &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# False&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;## enum을 정수와 비교하는 것은 항상 False&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; c &lt;span class=&quot;keyword&quot;&gt;in&lt;/span&gt; Color:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    print(c)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Color.RED&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Color.GREEN&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Color.BLUE&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(&lt;span class=&quot;built_in&quot;&gt;list&lt;/span&gt;(Color))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# [&amp;lt;Color.RED: 0&amp;gt;, &amp;lt;Color.GREEN: 1&amp;gt;, &amp;lt;Color.BLUE: 2&amp;gt;]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;p&gt;Python에서는 3.4 버전부터 열거형 클래스인 Enum을 기본으로 탑재하였다.&lt;br&gt;이 문서에서는 이것을 사용하는 방법을 정리한다.&lt;/p&gt;</summary>
     
     
     
@@ -95,22 +92,7 @@
     <summary type="html">&lt;h2 id=&quot;개요&quot;&gt;&lt;a href=&quot;#개요&quot; class=&quot;headerlink&quot; title=&quot;개요&quot;&gt;&lt;/a&gt;개요&lt;/h2&gt;
 
 &lt;p&gt;Windows 10 버전 1607 이상에서는 가상 머신이 없이도 Linux 환경에서 작업할 수 있다.&lt;br&gt;바로 Windows Subsystem for Linux, 줄여서 WSL이 있기 때문이다.&lt;/p&gt;
-&lt;p&gt;이 글에서는 Windows Subsystem for Linux 환경을 이용하여 Windows를 사용하며 Ubuntu도 사용하는 방법을 정리한다.&lt;/p&gt;
-&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h2 id=&quot;설치&quot;&gt;&lt;a href=&quot;#설치&quot; class=&quot;headerlink&quot; title=&quot;설치&quot;&gt;&lt;/a&gt;설치&lt;/h2&gt;&lt;p&gt;다음과 같은 순서로 WSL을 통해 Ubuntu를 설치할 수 있다.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;제어판 → 프로그램 → 프로그램 및 기능 → Windows 기능 켜기/끄기를 선택한다.&lt;/li&gt;
-&lt;li&gt;목록에서 Linux용 Windows 하위 시스템을 찾아 체크박스에 체크한다.&lt;/li&gt;
-&lt;li&gt;확인 버튼을 누르면 자동으로 설치가 되며 설치가 완료되면 안내에 따라 컴퓨터를 재부팅한다.&lt;/li&gt;
-&lt;li&gt;컴퓨터에 내장된 Microsoft Store를 열고 Ubuntu를 검색하여 설치한다.&lt;/li&gt;
-&lt;li&gt;설치가 완료되면 Ubuntu 앱을 연다.&lt;/li&gt;
-&lt;li&gt;콘솔 창이 뜨면 조금 기다린다.&lt;/li&gt;
-&lt;li&gt;Enter new UNIX username 문구가 나타나면 Ubuntu에서 사용할 계정을 입력한다.&lt;/li&gt;
-&lt;li&gt;그 후 비밀번호를 두 번 입력하면 설치가 완료된다.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;장단점&quot;&gt;&lt;a href=&quot;#장단점&quot; class=&quot;headerlink&quot; title=&quot;장단점&quot;&gt;&lt;/a&gt;장단점&lt;/h2&gt;&lt;p&gt;시스템 구축과 관련된 일을 하다보면 윈도우에서는 제약이 너무 많아서 리눅스 환경이 가장 적합하다고 느껴진다.&lt;br&gt;개발 일을 해도 Python이나 Node.js 등등 윈도우를 지원하긴 하지만 환경 구성에는 리눅스에 비빌 수가 없다.&lt;/p&gt;
-&lt;p&gt;그런데 막상 우분투 데스크탑을 깔아버리면 뱅킹도 안되고 게임도 안되고 쓰다가 지쳐서 에잉 다신 안 써 하면서 윈도우로 돌아오게 된다.&lt;br&gt;그러고 다시 아 불편해 리눅스 깔까? 무한 반복이다.&lt;/p&gt;</summary>
+&lt;p&gt;이 글에서는 Windows Subsystem for Linux 환경을 이용하여 Windows를 사용하며 Ubuntu도 사용하는 방법을 정리한다.&lt;/p&gt;</summary>
     
     
     
@@ -136,13 +118,7 @@
     <summary type="html">&lt;h2 id=&quot;개요&quot;&gt;&lt;a href=&quot;#개요&quot; class=&quot;headerlink&quot; title=&quot;개요&quot;&gt;&lt;/a&gt;개요&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/nodesource/distributions/blob/master/README.md&quot;&gt;https://github.com/nodesource/distributions/blob/master/README.md&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;위 페이지를 참고하여 Node.js를 설치하는 공식적인 방법을 정리한다.&lt;/p&gt;
-&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h2 id=&quot;설치&quot;&gt;&lt;a href=&quot;#설치&quot; class=&quot;headerlink&quot; title=&quot;설치&quot;&gt;&lt;/a&gt;설치&lt;/h2&gt;&lt;p&gt;다음 명령어를 이용하여 각 환경에서 Node.js를 설치할 수 있다.&lt;/p&gt;
-&lt;h3 id=&quot;Ubuntu-또는-Debian-기반&quot;&gt;&lt;a href=&quot;#Ubuntu-또는-Debian-기반&quot; class=&quot;headerlink&quot; title=&quot;Ubuntu 또는 Debian 기반&quot;&gt;&lt;/a&gt;Ubuntu 또는 Debian 기반&lt;/h3&gt;&lt;h4 id=&quot;U-D-기반-Node-js-v12-x-설치&quot;&gt;&lt;a href=&quot;#U-D-기반-Node-js-v12-x-설치&quot; class=&quot;headerlink&quot; title=&quot;U/D 기반 Node.js v12.x 설치&quot;&gt;&lt;/a&gt;U/D 기반 Node.js v12.x 설치&lt;/h4&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Using Ubuntu&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install -y nodejs&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# Using Debian, as root&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;curl -sL https://deb.nodesource.com/setup_12.x | bash -&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;apt-get install -y nodejs&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h4 id=&quot;U-D-기반-Node-js-v11-x-설치&quot;&gt;&lt;a href=&quot;#U-D-기반-Node-js-v11-x-설치&quot; class=&quot;headerlink&quot; title=&quot;U/D 기반 Node.js v11.x 설치&quot;&gt;&lt;/a&gt;U/D 기반 Node.js v11.x 설치&lt;/h4&gt;</summary>
+&lt;p&gt;위 페이지를 참고하여 Node.js를 설치하는 공식적인 방법을 정리한다.&lt;/p&gt;</summary>
     
     
     
@@ -165,13 +141,7 @@
     
     <summary type="html">&lt;h2 id=&quot;개요&quot;&gt;&lt;a href=&quot;#개요&quot; class=&quot;headerlink&quot; title=&quot;개요&quot;&gt;&lt;/a&gt;개요&lt;/h2&gt;
 
-&lt;p&gt;CentOS 환경에 Java를 설치하는 방법을 정리한다.&lt;/p&gt;
-&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h2 id=&quot;OpenJDK&quot;&gt;&lt;a href=&quot;#OpenJDK&quot; class=&quot;headerlink&quot; title=&quot;OpenJDK&quot;&gt;&lt;/a&gt;OpenJDK&lt;/h2&gt;&lt;h3 id=&quot;OpenJDK-버전&quot;&gt;&lt;a href=&quot;#OpenJDK-버전&quot; class=&quot;headerlink&quot; title=&quot;OpenJDK 버전&quot;&gt;&lt;/a&gt;OpenJDK 버전&lt;/h3&gt;&lt;p&gt;2019년 07월 29일 기준으로 최신 버전인 build 12+32를 이용하여 설명한다.&lt;/p&gt;
-&lt;h3 id=&quot;OpenJDK-다운로드&quot;&gt;&lt;a href=&quot;#OpenJDK-다운로드&quot; class=&quot;headerlink&quot; title=&quot;OpenJDK 다운로드&quot;&gt;&lt;/a&gt;OpenJDK 다운로드&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://jdk.java.net/&quot;&gt;http://jdk.java.net&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;위 사이트에서 JDK 최신 버전의 링크를 복사한다.&lt;/p&gt;
-&lt;p&gt;본 문서 작성일 기준으로 다음과 같았다.&lt;/p&gt;</summary>
+&lt;p&gt;CentOS 환경에 Java를 설치하는 방법을 정리한다.&lt;/p&gt;</summary>
     
     
     
@@ -198,14 +168,7 @@
     
     <summary type="html">&lt;h2 id=&quot;개요&quot;&gt;&lt;a href=&quot;#개요&quot; class=&quot;headerlink&quot; title=&quot;개요&quot;&gt;&lt;/a&gt;개요&lt;/h2&gt;
 
-&lt;p&gt;CentOS에 Docker를 설치하는 방법을 정리한다.&lt;/p&gt;
-&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h2 id=&quot;설치&quot;&gt;&lt;a href=&quot;#설치&quot; class=&quot;headerlink&quot; title=&quot;설치&quot;&gt;&lt;/a&gt;설치&lt;/h2&gt;&lt;h3 id=&quot;Update-packages&quot;&gt;&lt;a href=&quot;#Update-packages&quot; class=&quot;headerlink&quot; title=&quot;Update packages&quot;&gt;&lt;/a&gt;Update packages&lt;/h3&gt;&lt;p&gt;다음 명령어로 yum으로 설치된 모든 패키지의 업데이트를 진행한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo yum update -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;Docker-설치&quot;&gt;&lt;a href=&quot;#Docker-설치&quot; class=&quot;headerlink&quot; title=&quot;Docker 설치&quot;&gt;&lt;/a&gt;Docker 설치&lt;/h3&gt;&lt;p&gt;다음 명령어로 yum을 이용하여 Docker를 설치한다.&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo yum install -y docker&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;p&gt;CentOS에 Docker를 설치하는 방법을 정리한다.&lt;/p&gt;</summary>
     
     
     
@@ -230,13 +193,7 @@
     
     <summary type="html">&lt;h2 id=&quot;개요&quot;&gt;&lt;a href=&quot;#개요&quot; class=&quot;headerlink&quot; title=&quot;개요&quot;&gt;&lt;/a&gt;개요&lt;/h2&gt;
 
-&lt;p&gt;운영체제 CentOS를 설치하는 방법을 정리한다.&lt;/p&gt;
-&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h3 id=&quot;버전&quot;&gt;&lt;a href=&quot;#버전&quot; class=&quot;headerlink&quot; title=&quot;버전&quot;&gt;&lt;/a&gt;버전&lt;/h3&gt;&lt;p&gt;2019년 07월 29일 기준으로 최신 버전인 CentOS 7 1810 버전을 이용하여 설명한다.&lt;/p&gt;
-&lt;h2 id=&quot;CentOS-다운로드&quot;&gt;&lt;a href=&quot;#CentOS-다운로드&quot; class=&quot;headerlink&quot; title=&quot;CentOS 다운로드&quot;&gt;&lt;/a&gt;CentOS 다운로드&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://www.centos.org/download/&quot;&gt;https://www.centos.org/download/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;위 경로에서 최신 버전의 CentOS DVD ISO 파일을 다운로드한다.&lt;/p&gt;
-&lt;h2 id=&quot;CentOS-설치-환경-구성&quot;&gt;&lt;a href=&quot;#CentOS-설치-환경-구성&quot; class=&quot;headerlink&quot; title=&quot;CentOS 설치 환경 구성&quot;&gt;&lt;/a&gt;CentOS 설치 환경 구성&lt;/h2&gt;&lt;p&gt;다음 중 하나의 방식으로 CentOS 설치 환경을 구성한다.&lt;/p&gt;</summary>
+&lt;p&gt;운영체제 CentOS를 설치하는 방법을 정리한다.&lt;/p&gt;</summary>
     
     
     
